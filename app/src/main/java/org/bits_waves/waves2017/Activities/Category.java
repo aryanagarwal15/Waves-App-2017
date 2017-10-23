@@ -230,19 +230,80 @@ public class Category extends AppCompatActivity {
             listItems.add(listItem87);
 
         }
+        else if(heading.equals("Carpedictum"))
+        {
+            tv_heading.setText("Carpedictum");
+            EventItem listItem18 = new EventItem("Inverse","",
+                    "http://bits-waves.org/static/main/images1/events/culturalgauntlet.JPG","13:30","C-301","Literary");
+            listItems.add(listItem18);
 
-        back=(ImageButton) findViewById(R.id.back_button_category);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it=new Intent(Category.this,MainActivity.class);
-                startActivity(it);
-            }
-        });
+
+        }else if(heading.equals("Beau Vista"))
+        {
+            tv_heading.setText("Beau Vista");
+            EventItem listItem7 = new EventItem("Artathon","Round 1","http://bits-waves.org/static/main/images1/events/artathon.jpg","10:00","LT-4","Design");
+            listItems.add(listItem7);
+            EventItem listItem5 = new EventItem("Portaiture","",
+                    "http://bits-waves.org/static/main/images1/events/portraiture.JPG",
+                    "09:00","C-302","Design");
+            listItems.add(listItem5);
+            EventItem listItem8 = new EventItem("Blind Art","","http://bits-waves.org/static/main/images1/events/blindart.JPG","10:00","KalaRoom","Design");
+            listItems.add(listItem8);
+
+
+        }
+        else if(heading.equals("Florence"))
+        {
+            tv_heading.setText("Florence");
+            //dance
+            EventItem listItem3 = new EventItem("Sizzle","","http://bits-waves.org/static/main/images1/events/sizzle.jpg","23:00","C-301","Dance");
+            listItems.add(listItem3);
+            EventItem listItem1 = new EventItem("Dancing Duo","","http://bits-waves.org/static/main/images1/events/dancingduo.jpg","09:00","Outdoor Stage","Dance");
+            listItems.add(listItem1);
+            EventItem listItem19 = new EventItem("Natyanjali","","http://bits-waves.org/static/main/images1/events/natyanjali.JPG","00:00","CC","Dance");
+            listItems.add(listItem19);
+
+            //drama
+            EventItem listItem = new EventItem("Rangmanch","","http://bits-waves.org/static/main/images1/events/rangmanch.jpg","09:00","Auditorium","Drama");
+            listItems.add(listItem);
+            EventItem listItem6 = new EventItem("Nukkad Natak","","http://bits-waves.org/static/main/images1/events/nukkadnatak.jpg","10:00","LT1,2Lawns","Drama");
+            listItems.add(listItem6);
+            EventItem listItem5 = new EventItem("Skime","",
+                    "http://bits-waves.org/static/main/images1/events/skime.JPG",
+                    "09:00","Auditorium","Drama");
+            listItems.add(listItem5);
+
+            //music
+            EventItem listItem4 = new EventItem("Jukebox","","http://bits-waves.org/static/main/images1/events/jokebox.JPG","23:00","LT 1/2 lawns","Music");
+            listItems.add(listItem4);
+            EventItem listItem47 = new EventItem("Solonote","",
+                    "http://bits-waves.org/static/main/images1/events/solonote.jpg",
+                    "09:00","LT3,4Lawns","Music");
+            listItems.add(listItem47);
+            EventItem listItem7 = new EventItem("Silence Of The Amps","","http://bits-waves.org/static/main/images1/events/rangmanch.jpg","09:30","LT 1,2 Lawns","Music");
+            listItems.add(listItem7);
+            EventItem listItem8 = new EventItem("Alaap","",
+                    "http://bits-waves.org/static/main/images1/events/alaap.jpg","09:30",
+                    "C-303","Music");
+            listItems.add(listItem8);
+            EventItem listItem197 = new EventItem("Indian Rock","",
+                    "http://bits-waves.org/static/main/images1/events/indian_rock.jpg",
+                    "00:00","Auditorium","Music");
+            listItems.add(listItem197);
+
+        }
+
+//        back=(ImageButton) findViewById(R.id.back_button_category);
+//        back.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent it=new Intent(Category.this,Category_home_page.class);
+//                startActivity(it);
+//            }
+//        });
 
 
 
     }
 }
-
 

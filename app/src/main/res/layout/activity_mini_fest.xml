@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.bits_waves.waves2017.Activities.Category"
+    android:background="@drawable/gradient_back">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="0dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/gradient_back">
+                <ImageButton
+                    android:minHeight="55dp"
+                    android:minWidth="55dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:background="@drawable/gradient_back"
+                    app:srcCompat="?android:attr/actionModeCloseDrawable"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Minifest"
+                    android:textSize="45dp"
+                    android:layout_marginLeft="50dp"/>
+            </LinearLayout>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="55dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="0dp">
+
+                <TextView
+                    android:id="@+id/carpedictum"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/guitar"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="Carpedictum"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:id="@+id/beau_vista"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/guitar"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="Beau Vista"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:id="@+id/florence"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/guitar"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="Florence"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:id="@+id/specials"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/guitar"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="Specials"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30dp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </android.support.design.widget.AppBarLayout>
+</RelativeLayout>
