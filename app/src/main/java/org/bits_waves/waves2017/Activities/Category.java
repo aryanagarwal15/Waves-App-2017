@@ -293,14 +293,14 @@ public class Category extends AppCompatActivity {
 
         }
 
-//        back=(ImageButton) findViewById(R.id.back_button_category);
-//        back.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent it=new Intent(Category.this,Category_home_page.class);
-//                startActivity(it);
-//            }
-//        });
+        back=(ImageButton) findViewById(R.id.back_button_category);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it=new Intent(Category.this,Category_home_page.class);
+                startActivity(it);
+            }
+        });
 
 
 
