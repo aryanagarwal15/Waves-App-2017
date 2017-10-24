@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -25,6 +25,7 @@
                     android:minHeight="55dp"
                     android:minWidth="55dp"
                     android:layout_width="wrap_content"
+                    android:id="@+id/back"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:background="@drawable/gradient_back"
@@ -35,15 +36,12 @@
                     android:layout_height="wrap_content"
                     android:text="Minifest"
                     android:textSize="22dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="80dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginStart="80dp"
-                    android:layout_marginTop="8dp"
+                    android:textColor="#fff"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
 
                     />
-            </LinearLayout>
+            </RelativeLayout>
 
         </android.support.design.widget.CollapsingToolbarLayout>
 

@@ -37,6 +37,9 @@
         </activity>
         <activity android:name=".Activities.NowLive" />
         <activity android:name=".Activities.WinnersActivity" />
+        <activity android:name=".Activities.Category_home_page"/>
+        <activity android:name=".Activities.Mini_fest"/>
+        <activity android:name=".Activities.Category"/>
     </application>
 
 </manifest>

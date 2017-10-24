@@ -58,7 +58,7 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.ViewHolder> {
             public void onClick(View view) {
                 //Toast.makeText(context,"number",Toast.LENGTH_LONG).show();
                 //String str=holder.number.getText().toString();
-                Intent it=new Intent(Intent.ACTION_VIEW);
+                Intent it=new Intent(Intent.ACTION_VIEW).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 it.setData(Uri.parse(listItem.getLink()));
                 context.startActivity(it);
             }
@@ -68,7 +68,7 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.ViewHolder> {
             public void onClick(View view) {
                 //Toast.makeText(context,"number",Toast.LENGTH_LONG).show();
                 //String str=holder.number.getText().toString();
-                Intent it1=new Intent(Intent.ACTION_VIEW);
+                Intent it1=new Intent(Intent.ACTION_VIEW).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 it1.setData(Uri.parse(listItem.getLink2()));
                 context.startActivity(it1);
             }
@@ -78,7 +78,7 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.ViewHolder> {
             public void onClick(View view) {
                 //Toast.makeText(context,"number",Toast.LENGTH_LONG).show();
                 //String str=holder.number.getText().toString();
-                Intent it2=new Intent(Intent.ACTION_SEND);
+                Intent it2=new Intent(Intent.ACTION_SEND).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 it2.setType("text/html");
                 it2.putExtra(Intent.EXTRA_EMAIL,listItem.getEmail());
                 context.startActivity(it2);
@@ -89,7 +89,7 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.ViewHolder> {
             public void onClick(View view) {
                 //Toast.makeText(context,"number",Toast.LENGTH_LONG).show();
                 //String str=holder.number.getText().toString();
-                Intent it3=new Intent(Intent.ACTION_SEND);
+                Intent it3=new Intent(Intent.ACTION_SEND).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 it3.setType("text/html");
                 it3.putExtra(Intent.EXTRA_EMAIL,listItem.getEmail2());
                 context.startActivity(it3);
@@ -100,7 +100,7 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.ViewHolder> {
             public void onClick(View view) {
                 //Toast.makeText(context,"number",Toast.LENGTH_LONG).show();
                 //String str=holder.number.getText().toString();
-                Intent it4=new Intent(Intent.ACTION_DIAL);
+                Intent it4=new Intent(Intent.ACTION_DIAL).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 it4.setData(Uri.parse("tel:" +listItem.getNumber()));
                 context.startActivity(it4);
             }
@@ -110,7 +110,7 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.ViewHolder> {
             public void onClick(View view) {
                 //Toast.makeText(context,"number",Toast.LENGTH_LONG).show();
                 //String str=holder.number.getText().toString();
-                Intent it5=new Intent(Intent.ACTION_DIAL);
+                Intent it5=new Intent(Intent.ACTION_DIAL).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 it5.setData(Uri.parse("tel:" +listItem.getNumber2()));
                 context.startActivity(it5);
             }

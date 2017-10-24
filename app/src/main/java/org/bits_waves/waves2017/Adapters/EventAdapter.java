@@ -58,7 +58,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, Events.class);
+                Intent intent = new Intent(context, Events.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("event_name",listItem.getHead());
                 intent.putExtra("event_image",listItem.getImageUrl());
                 context.startActivity(intent);
@@ -81,7 +81,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
         holder.event_category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it=new Intent(context, Category.class);
+                Intent it=new Intent(context, Category.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 it.putExtra("category_heading",holder.event_category.getText().toString());
                 context.startActivity(it);
             }
