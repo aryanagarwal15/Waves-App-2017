@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.bits_waves.waves2017.Activities.Category_home_page"
+    android:background="@drawable/gradient_back"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="0dp"
+
+        >
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradient_back">
+                <ImageButton
+                    android:id="@+id/categories_back"
+                    android:minHeight="55dp"
+                    android:minWidth="55dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:background="@drawable/gradient_back"
+                    app:srcCompat="?android:attr/actionModeCloseDrawable"/>
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Categories"
+                    android:textSize="22dp"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="55dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="0dp">
+
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:clickable="true"
+                    >
+                    <ImageView
+                        android:id="@+id/categories_dance"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        >
+                    </ImageView>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dacne"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="30dp"/>
+
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="90dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dacne enthusiastics here!"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:clickable="true"
+                    >
+                    <ImageView
+                        android:id="@+id/categories_drama"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        >
+                    </ImageView>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Drama"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="30dp"/>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="90dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Act your way to success!"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:clickable="true"
+                    >
+                    <ImageView
+                        android:id="@+id/categories_specials"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        >
+                    </ImageView>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Specials"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="30dp"/>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="90dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Specials at waves"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:clickable="true"
+                    >
+                    <ImageView
+                        android:id="@+id/categories_music"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        >
+                    </ImageView>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Music"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="30dp"/>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="90dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enjoy listening to other's music?"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:clickable="true"
+                    >
+                    <ImageView
+                        android:id="@+id/categories_literary"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        >
+                    </ImageView>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Literary"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="30dp"/>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="90dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Showcase the writer in you"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:clickable="true"
+                    >
+                    <ImageView
+                        android:id="@+id/categories_quiz"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        >
+                    </ImageView>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quiz"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="30dp"/>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="90dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enjoy quizzing?\nYou have come to write place!"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"/>
+                </RelativeLayout>
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:clickable="true"
+                    >
+                    <ImageView
+                        android:id="@+id/categories_design"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        >
+                    </ImageView>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Design"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="30dp"/>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="90dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Showcase your artistic skills!"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"/>
+                </RelativeLayout>
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:clickable="true"
+                    >
+                    <ImageView
+                        android:id="@+id/categories_workshop"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        >
+                    </ImageView>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Workshop"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="30dp"/>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="90dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Time to learn something new!"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </android.support.design.widget.AppBarLayout>
+</RelativeLayout>
