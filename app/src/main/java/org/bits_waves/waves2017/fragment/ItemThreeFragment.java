@@ -14,7 +14,6 @@ import org.bits_waves.waves2017.Activities.Mini_fest;
 import org.bits_waves.waves2017.Activities.NowLive;
 import org.bits_waves.waves2017.Activities.OurTeam;
 import org.bits_waves.waves2017.Activities.RegActivity;
-import org.bits_waves.waves2017.Manifest;
 import org.bits_waves.waves2017.R;
 import org.bits_waves.waves2017.Activities.WinnersActivity;
 
