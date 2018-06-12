@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
+import org.bits_waves.waves2017.Activities.CircleTransform;
 import org.bits_waves.waves2017.R;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -26,16 +27,10 @@ public class ProfileActivity extends AppCompatActivity {
         if (user != null) {
             // Name, email address, and profile photo Url
             String name = user.getDisplayName();
-            String email = user.getEmail();
             Uri photoUrl = user.getPhotoUrl();
-
-            // Check if user's email is verified
             boolean emailVerified = user.isEmailVerified();
             username.setText(name);
-            Log.i("url",photoUrl.toString());
-            Picasso.with(getApplicationContext()).load(photoUrl.toString()+"?height=500").into(profileImage);
-
-
+            Picasso.with(getApplicationContext()).load(photoUrl.toString()+"?height=500").transform(new CircleTransform()).into(profileImage);
         }
     }
 }

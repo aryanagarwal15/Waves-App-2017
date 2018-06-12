@@ -24,11 +24,22 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_email"
+            <RelativeLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <EditText android:id="@+id/bits_email"
+                android:layout_width="105dp"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:hint="@string/waves_id" />
+                android:hint="f201XXXXX" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/bits_email"
+                android:text=" @goa.bits-pilani.ac.in"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                />
+            </RelativeLayout>
         </android.support.design.widget.TextInputLayout>
 
         <!-- Password Label -->
@@ -37,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_password"
+            <EditText android:id="@+id/bits_pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
@@ -45,7 +56,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/bits_login"
+            android:id="@+id/btn_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"

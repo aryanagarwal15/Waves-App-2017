@@ -63,7 +63,8 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".login.ProfileActivity"></activity>
+        <activity android:name=".login.ProfileActivity" />
+        <activity android:name=".login.BITSLogin"></activity>
     </application>
 
 </manifest>
