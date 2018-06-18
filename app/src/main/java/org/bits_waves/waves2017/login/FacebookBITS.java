@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,7 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 import org.bits_waves.waves2017.R;
 
 
-public class FacebookActivity extends AppCompatActivity {
+public class FacebookBITS extends AppCompatActivity {
     private CallbackManager mCallbackManager;
     private FirebaseAuth mAuth;
 
@@ -90,7 +91,7 @@ public class FacebookActivity extends AppCompatActivity {
         Log.d("DevLog", "handleFacebookAccessToken:" + token);
 
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
-        mAuth.signInWithCredential(credential)
+        mAuth.getCurrentUser().linkWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -102,7 +103,7 @@ public class FacebookActivity extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("DevLog", "signInWithCredential:failure", task.getException());
-                            Toast.makeText(FacebookActivity.this, "Authentication failed.",
+                            Toast.makeText(FacebookBITS.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                             updateUI();
                         }

@@ -18,6 +18,7 @@ public class ProfileActivity extends AppCompatActivity {
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     TextView username;
     ImageView profileImage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +31,7 @@ public class ProfileActivity extends AppCompatActivity {
             Uri photoUrl = user.getPhotoUrl();
             boolean emailVerified = user.isEmailVerified();
             username.setText(name);
-            Picasso.with(getApplicationContext()).load(photoUrl.toString()+"?height=500").transform(new CircleTransform()).into(profileImage);
+            Picasso.with(getApplicationContext()).load(photoUrl.toString() + "?height=500").transform(new CircleTransform()).into(profileImage);
         }
     }
 }

@@ -34,13 +34,7 @@
         <activity android:name=".Activities.Category_home_page" />
         <activity android:name=".Activities.Mini_fest" />
         <activity android:name=".Activities.Category" />
-        <activity android:name=".login.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.FacebookActivity" />
 
         <meta-data
@@ -64,7 +58,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".login.ProfileActivity" />
-        <activity android:name=".login.BITSLogin"></activity>
+        <activity android:name=".login.BITSLogin">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".login.FacebookBITS" />
+        <activity android:name=".login.VerifyBITS"></activity>
     </application>
 
 </manifest>

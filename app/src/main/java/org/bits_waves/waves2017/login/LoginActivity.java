@@ -13,6 +13,7 @@ import org.bits_waves.waves2017.R;
 public class LoginActivity extends AppCompatActivity {
     Button login_btn;
     FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
