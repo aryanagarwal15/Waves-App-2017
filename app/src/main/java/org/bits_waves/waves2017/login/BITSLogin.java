@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +24,7 @@ public class BITSLogin extends AppCompatActivity {
     private FirebaseAuth mAuth;
     EditText editEmail, editPassword;
     Button signup;
+    TextView alreadyLoggedIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +34,28 @@ public class BITSLogin extends AppCompatActivity {
         editPassword = findViewById(R.id.bits_pass);
         signup = findViewById(R.id.btn_login);
         mAuth = FirebaseAuth.getInstance();
-
+        alreadyLoggedIn = findViewById(R.id.move_to_login);
+        alreadyLoggedIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), VerifyBITS.class);
+                startActivity(i);
+                finish();
+            }
+        });
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = editEmail.getText().toString() + "@goa.bits-pilani.ac.in";
-                String pass = editPassword.getText().toString();
-                createUser(email, pass);
+                if (editEmail.getText().toString().equals("") || editPassword.getText().toString().equals("")) {
+                    Toast.makeText(getApplicationContext(),"Please fill in BITS Mail and Password",Toast.LENGTH_LONG)
+                            .show();
+
+                }
+                else{
+                    String email = editEmail.getText().toString() + "@goa.bits-pilani.ac.in";
+                    String pass = editPassword.getText().toString();
+                    createUser(email, pass);
+                }
             }
         });
     }
@@ -74,6 +91,7 @@ public class BITSLogin extends AppCompatActivity {
                             finish();
                         } else {
                             Log.w("BITS Login", "Email was not sent");
+
                         }
                     }
                 });

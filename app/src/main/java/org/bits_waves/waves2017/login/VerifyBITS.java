@@ -68,7 +68,8 @@ public class VerifyBITS extends AppCompatActivity {
             finish();
             Toast.makeText(getApplicationContext(), "Successfully logged in", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(getApplicationContext(), "Please verify your email before continuing", Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "Check:success");
+            Toast.makeText(getApplicationContext(), "Please verify your email before continuing", Toast.LENGTH_LONG).show();
             FirebaseAuth.getInstance().signOut();
         }
     }

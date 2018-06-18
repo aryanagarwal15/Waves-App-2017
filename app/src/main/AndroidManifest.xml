@@ -28,7 +28,13 @@
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
 
-        <activity android:name=".SplashScreen" />
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Activities.NowLive" />
         <activity android:name=".Activities.WinnersActivity" />
         <activity android:name=".Activities.Category_home_page" />
@@ -59,14 +65,10 @@
         </activity>
         <activity android:name=".login.ProfileActivity" />
         <activity android:name=".login.BITSLogin">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".login.FacebookBITS" />
-        <activity android:name=".login.VerifyBITS"></activity>
+        <activity android:name=".login.VerifyBITS" />
+        <activity android:name=".login.MainLogin"></activity>
     </application>
 
 </manifest>

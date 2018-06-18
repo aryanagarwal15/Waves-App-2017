@@ -7,8 +7,10 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
 import com.squareup.picasso.Picasso;
 
 import org.bits_waves.waves2017.Activities.CircleTransform;
@@ -17,21 +19,25 @@ import org.bits_waves.waves2017.R;
 public class ProfileActivity extends AppCompatActivity {
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     TextView username;
+    FirebaseAuth mAuth;
     ImageView profileImage;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         username = findViewById(R.id.user_profile_name);
         profileImage = findViewById(R.id.user_profile_photo);
-        if (user != null) {
-            // Name, email address, and profile photo Url
-            String name = user.getDisplayName();
-            Uri photoUrl = user.getPhotoUrl();
-            boolean emailVerified = user.isEmailVerified();
-            username.setText(name);
-            Picasso.with(getApplicationContext()).load(photoUrl.toString() + "?height=500").transform(new CircleTransform()).into(profileImage);
+        for(UserInfo profile : user.getProviderData()) {
+            // check if the provider id matches "facebook.com"
+            if(FacebookAuthProvider.PROVIDER_ID.equals(profile.getProviderId())) {
+
+                // Name, email address, and profile photo Url
+                String name = profile.getDisplayName();
+                Uri photoUrl = profile.getPhotoUrl();
+                boolean emailVerified = profile.isEmailVerified();
+                username.setText(name);
+                Picasso.with(getApplicationContext()).load(photoUrl.toString()+"?height=500").transform(new CircleTransform()).into(profileImage);
+            }
         }
     }
 }
