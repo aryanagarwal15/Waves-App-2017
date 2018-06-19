@@ -46,7 +46,7 @@ public class ItemOneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.events_tabs,container, false);
+        View view = inflater.inflate(R.layout.events_tabs, container, false);
         // Setting ViewPager for each Tabs
         ViewPager viewPager = view.findViewById(R.id.viewpager);
         setupViewPager(viewPager);
@@ -61,6 +61,7 @@ public class ItemOneFragment extends Fragment {
 
         return view;
     }
+
     private void setupViewPager(ViewPager viewPager) {
 
 
@@ -73,8 +74,8 @@ public class ItemOneFragment extends Fragment {
         viewPager.setAdapter(adapter);
 
 
-
     }
+
     static class Adapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();

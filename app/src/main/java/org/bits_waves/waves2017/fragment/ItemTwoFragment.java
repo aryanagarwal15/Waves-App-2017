@@ -38,6 +38,7 @@ public class ItemTwoFragment extends Fragment {
     private View myFragmentView;
     private String imgURL;
     private int bitIMG;
+
     public static ItemTwoFragment newInstance() {
         ItemTwoFragment fragment = new ItemTwoFragment();
         return fragment;
@@ -46,21 +47,16 @@ public class ItemTwoFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(CheckNetwork.isInternetAvailable(getActivity().getApplicationContext())) //returns true if internet available
-        {
-
-            //do something. loadwebview.
-        }
-        else
-        {
-            Toast.makeText(getActivity().getApplicationContext(),"No Internet Connection",Toast.LENGTH_LONG).show();
+        if (CheckNetwork.isInternetAvailable(getActivity().getApplicationContext())) {
+        } else {
+            Toast.makeText(getActivity().getApplicationContext(), "No Internet Connection", Toast.LENGTH_LONG).show();
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        myFragmentView=inflater.inflate(R.layout.fragment_item_two, container, false);
+        myFragmentView = inflater.inflate(R.layout.fragment_item_two, container, false);
         fData = Utils.getDatabase();
         recyclerView = myFragmentView.findViewById(R.id.recycle3);
         recyclerView.setHasFixedSize(true);
@@ -76,7 +72,7 @@ public class ItemTwoFragment extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         mDatabase = fData.getReference().child("rtd");
         mDatabase.keepSynced(true);
-        adapter = new RTDAdapter(listItems,getActivity().getApplicationContext());
+        adapter = new RTDAdapter(listItems, getActivity().getApplicationContext());
 
         recyclerView.setAdapter(adapter);
 
@@ -91,23 +87,23 @@ public class ItemTwoFragment extends Fragment {
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     RTDPuller dataPuller = snapshot.getValue(RTDPuller.class);
-                    RTDItem listItem =new RTDItem(
+                    RTDItem listItem = new RTDItem(
                             dataPuller.getNewshead(), dataPuller.getNewsdesc()
                     );
                     listItems.add(listItem);
-                    Log.d( "Name", dataPuller.getNewshead());
-                    Log.d( "Mobile", dataPuller.getNewsdesc());
+                    Log.d("Name", dataPuller.getNewshead());
+                    Log.d("Mobile", dataPuller.getNewsdesc());
                     adapter.notifyDataSetChanged();
                 }
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
 
         });
-
 
         return myFragmentView;
     }

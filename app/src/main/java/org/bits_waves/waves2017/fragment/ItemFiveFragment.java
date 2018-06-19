@@ -50,43 +50,40 @@ public class ItemFiveFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        myFragmentView=inflater.inflate(R.layout.fragment_item_five, container, false);
+        myFragmentView = inflater.inflate(R.layout.fragment_item_five, container, false);
         recyclerView = (RecyclerView) myFragmentView.findViewById(R.id.recycle5);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
         listItems = new ArrayList<>();
         fData = Utils.getDatabase();
         mDatabase = fData.getReference().child("Winner");
-        adapter = new NewWinnerAdapter(listItems,getActivity().getApplicationContext());
+        adapter = new NewWinnerAdapter(listItems, getActivity().getApplicationContext());
         mDatabase.keepSynced(true);
         recyclerView.setAdapter(adapter);
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     WinnerPuller dataPuller = snapshot.getValue(WinnerPuller.class);
-                    WinnerItem listItem =new WinnerItem(
+                    WinnerItem listItem = new WinnerItem(
                             dataPuller.getEvent_Name(), dataPuller.getWinner_Name(), dataPuller.getWinner_2(), dataPuller.getWinner_3()
                     );
                     listItems.add(listItem);
-                    Log.d( "Winner_Name", dataPuller.getWinner_Name());
-                    Log.d( "Event_Name", dataPuller.getEvent_Name());
+                    Log.d("Winner_Name", dataPuller.getWinner_Name());
+                    Log.d("Event_Name", dataPuller.getEvent_Name());
                     adapter.notifyDataSetChanged();
                 }
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
 
         });
-        if(CheckNetwork.isInternetAvailable(getActivity().getApplicationContext())) //returns true if internet available
+        if (CheckNetwork.isInternetAvailable(getActivity().getApplicationContext())) //returns true if internet available
         {
-
-            //do something. loadwebview.
-        }
-        else
-        {
-            Toast.makeText(getActivity().getApplicationContext(),"No Internet Connection",Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getActivity().getApplicationContext(), "No Internet Connection", Toast.LENGTH_LONG).show();
         }
 
         return myFragmentView;

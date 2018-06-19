@@ -21,9 +21,9 @@ import java.util.List;
  * Created by Keshav on 09-Sep-17.
  */
 
-public class OurTeam_FragementSponsers extends android.support.v4.app.Fragment{
+public class OurTeam_FragementSponsers extends android.support.v4.app.Fragment {
 
-    private static final String TAG="OurTeam_FragementSponsers";
+    private static final String TAG = "OurTeam_FragementSponsers";
     public View inf;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -32,16 +32,16 @@ public class OurTeam_FragementSponsers extends android.support.v4.app.Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        inf=inflater.inflate(R.layout.our_team_fragement_sponsers, container,false);
+        inf = inflater.inflate(R.layout.our_team_fragement_sponsers, container, false);
         recyclerView = (RecyclerView) inf.findViewById(R.id.our_team_fragement_sponsors_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
-        appItems =new ArrayList<>();
-        AppItem appItem1 =new AppItem("Aryan Agarwal","Head Developer","9521382950","aryanagarwal15@gmail.com","http://www.facebook.com","https://www.w3schools.com/css/trolltunga.jpg","Ashish Phogat","Developer","9521382950","aryanagarwal15@gmail.com","http://www.facebook.com","https://www.w3schools.com/css/trolltunga.jpg");
-        AppItem appItem2 =new AppItem("Keshav Mittal","Developer", "9521382950","shanumittal147@gmail.com","http://www.facebook.com","https://www.w3schools.com/css/trolltunga.jpg","Rishab Kincha","Developer", "9521382950","shanumittal147@gmail.com","http://www.facebook.com","https://www.w3schools.com/css/trolltunga.jpg");
+        appItems = new ArrayList<>();
+        AppItem appItem1 = new AppItem("Aryan Agarwal", "Head Developer", "9521382950", "aryanagarwal15@gmail.com", "http://www.facebook.com", "https://www.w3schools.com/css/trolltunga.jpg", "Ashish Phogat", "Developer", "9521382950", "aryanagarwal15@gmail.com", "http://www.facebook.com", "https://www.w3schools.com/css/trolltunga.jpg");
+        AppItem appItem2 = new AppItem("Keshav Mittal", "Developer", "9521382950", "shanumittal147@gmail.com", "http://www.facebook.com", "https://www.w3schools.com/css/trolltunga.jpg", "Rishab Kincha", "Developer", "9521382950", "shanumittal147@gmail.com", "http://www.facebook.com", "https://www.w3schools.com/css/trolltunga.jpg");
         appItems.add(appItem1);
         appItems.add(appItem2);
-        adapter = new AppAdapter(appItems,getActivity().getApplicationContext());
+        adapter = new AppAdapter(appItems, getActivity().getApplicationContext());
         recyclerView.setAdapter(adapter);
         return inf;
     }
