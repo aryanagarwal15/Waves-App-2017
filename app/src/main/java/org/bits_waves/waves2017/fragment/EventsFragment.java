@@ -1,7 +1,5 @@
 package org.bits_waves.waves2017.fragment;
 
-
-
 import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.os.Build;
@@ -68,10 +66,7 @@ public class EventsFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_events,container, false);
-
-
-        mViewPager = (ViewPager) view.findViewById(R.id.viewPager);
-
+        mViewPager = (ViewPager) view.findViewById(R.id.viewpager_events_fragment);
         return view;
         //return super.onCreateView(inflater, container, savedInstanceState);
     }

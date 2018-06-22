@@ -7,6 +7,7 @@ public class EventsCardItem {
 
     public EventsCardItem(int title) {
         mTitleResource = title;
+        imgUrl = "https://img.freepik.com/free-vector/modern-dark-texture-background_1035-11632.jpg?size=338&ext=jpg";
     }
 
     public int getText() {

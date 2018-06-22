@@ -1,16 +1,32 @@
 package org.bits_waves.waves2017.Activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import org.bits_waves.waves2017.Adapters.EventsCardFragmentPagerAdapter;
+import org.bits_waves.waves2017.Adapters.EventsCardPagerAdapter;
+import org.bits_waves.waves2017.Adapters.EventsViewCardPagerAdapter;
+import org.bits_waves.waves2017.ListItems.EventsCardItem;
 import org.bits_waves.waves2017.R;
+import org.bits_waves.waves2017.ShadowTransformer;
 
 public class EventsView extends AppCompatActivity {
 
     private int day;
     private TextView titleTextView;
+
+    private ViewPager mViewPager;
+
+    private EventsViewCardPagerAdapter mCardAdapter;
+    private ShadowTransformer mCardShadowTransformer;
+    private EventsCardFragmentPagerAdapter mFragmentCardAdapter;
+    private ShadowTransformer mFragmentCardShadowTransformer;
+
+    private boolean mShowingFragments = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +35,33 @@ public class EventsView extends AppCompatActivity {
         Intent intent = getIntent();
         day = intent.getIntExtra("day", 0);
 
+        mViewPager = (ViewPager) findViewById(R.id.viewpager_events_activity);
+
         //Code to display
         titleTextView = (TextView) findViewById(R.id.textview_title_events_activity);
-        titleTextView.setText("Day " + day + " events here");
+        titleTextView.setText("Day " + day);
+
+        mCardAdapter = new EventsViewCardPagerAdapter();
+        mCardAdapter.addCardItem(new EventsCardItem(R.string.event_1));
+        mCardAdapter.addCardItem(new EventsCardItem(R.string.event_2));
+        mCardAdapter.addCardItem(new EventsCardItem(R.string.event_3));
+        mCardAdapter.addCardItem(new EventsCardItem(R.string.event_4));
+        mCardAdapter.addCardItem(new EventsCardItem(R.string.event_5));
+        mCardAdapter.addCardItem(new EventsCardItem(R.string.event_6));
+        mCardAdapter.addCardItem(new EventsCardItem(R.string.event_7));
+        mCardAdapter.addCardItem(new EventsCardItem(R.string.event_8));
+        mFragmentCardAdapter = new EventsCardFragmentPagerAdapter(getSupportFragmentManager(),
+                dpToPixels(2, getApplicationContext()));
+
+        mCardShadowTransformer = new ShadowTransformer(mViewPager, mCardAdapter);
+        mFragmentCardShadowTransformer = new ShadowTransformer(mViewPager, mFragmentCardAdapter);
+
+        mViewPager.setAdapter(mCardAdapter);
+        mViewPager.setPageTransformer(false, mCardShadowTransformer);
+        mViewPager.setOffscreenPageLimit(3);
+    }
+
+    public static float dpToPixels(int dp, Context context) {
+        return dp * (context.getResources().getDisplayMetrics().density);
     }
 }

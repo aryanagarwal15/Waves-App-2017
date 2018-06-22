@@ -24,4 +24,14 @@
     <string name="title_3">Bad card</string>
     <string name="title_4">Ugly card</string>
     <string name="text_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam eget ligula eu lectus lobortis condimentum.</string>
+    <string name="event_1">Spin Off</string>
+    <string name="event_2">Natyanjali</string>
+    <string name="event_3">Sizzle</string>
+    <string name="event_4">Dancing Duo</string>
+    <string name="event_5">Rangmanch</string>
+    <string name="event_6">Nukkad Natak</string>
+    <string name="event_7">Skime</string>
+    <string name="event_8">Indian Rock</string>
+
+
 </resources>
