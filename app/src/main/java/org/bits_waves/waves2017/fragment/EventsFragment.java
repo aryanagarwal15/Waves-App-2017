@@ -24,9 +24,7 @@ import org.bits_waves.waves2017.ShadowTransformer;
 
 public class EventsFragment extends Fragment{
 
-    private Button mButton;
     private ViewPager mViewPager;
-    private CheckBox mCheckbox;
 
     private EventsCardPagerAdapter mCardAdapter;
     private ShadowTransformer mCardShadowTransformer;
@@ -51,10 +49,10 @@ public class EventsFragment extends Fragment{
     public void onStart() {
         super.onStart();
         mCardAdapter = new EventsCardPagerAdapter();
-        mCardAdapter.addCardItem(new EventsCardItem(R.string.title_1, R.string.text_1));
-        mCardAdapter.addCardItem(new EventsCardItem(R.string.title_2, R.string.text_1));
-        mCardAdapter.addCardItem(new EventsCardItem(R.string.title_3, R.string.text_1));
-        mCardAdapter.addCardItem(new EventsCardItem(R.string.title_4, R.string.text_1));
+        mCardAdapter.addCardItem(new EventsCardItem(R.string.day_0));
+        mCardAdapter.addCardItem(new EventsCardItem(R.string.day_1));
+        mCardAdapter.addCardItem(new EventsCardItem(R.string.day_2));
+        mCardAdapter.addCardItem(new EventsCardItem(R.string.day_3));
         mFragmentCardAdapter = new EventsCardFragmentPagerAdapter(getActivity().getSupportFragmentManager(),
                 dpToPixels(2, getContext()));
 
@@ -73,8 +71,6 @@ public class EventsFragment extends Fragment{
 
 
         mViewPager = (ViewPager) view.findViewById(R.id.viewPager);
-        mButton = (Button) view.findViewById(R.id.cardTypeBtn);
-        CheckBox mCheckbox =  view.findViewById(R.id.checkBox);
 
         return view;
         //return super.onCreateView(inflater, container, savedInstanceState);

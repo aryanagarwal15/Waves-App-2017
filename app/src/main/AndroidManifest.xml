@@ -64,11 +64,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".login.ProfileActivity" />
-        <activity android:name=".login.BITSLogin">
-        </activity>
+        <activity android:name=".login.BITSLogin"></activity>
         <activity android:name=".login.FacebookBITS" />
         <activity android:name=".login.VerifyBITS" />
-        <activity android:name=".login.MainLogin"></activity>
+        <activity android:name=".login.MainLogin" />
+        <activity android:name=".Activities.EventsView"></activity>
     </application>
 
 </manifest>

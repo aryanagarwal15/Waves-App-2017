@@ -1,12 +1,16 @@
 package org.bits_waves.waves2017.Adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
+import org.bits_waves.waves2017.Activities.EventsView;
 import org.bits_waves.waves2017.ListItems.EventsCardItem;
 import org.bits_waves.waves2017.R;
 import org.bits_waves.waves2017.fragment.EventsFragment;
@@ -54,8 +58,8 @@ public class EventsCardPagerAdapter extends PagerAdapter implements EventsFragme
         View view = LayoutInflater.from(container.getContext())
                 .inflate(R.layout.adapter_events, container, false);
         container.addView(view);
-        bind(mData.get(position), view);
-        CardView cardView = (CardView) view.findViewById(R.id.cardView);
+        bind(mData.get(position), view, container.getContext());
+        CardView cardView = (CardView) view.findViewById(R.id.cardview_events);
 
         if (mBaseElevation == 0) {
             mBaseElevation = cardView.getCardElevation();
@@ -72,11 +76,38 @@ public class EventsCardPagerAdapter extends PagerAdapter implements EventsFragme
         mViews.set(position, null);
     }
 
-    private void bind(EventsCardItem item, View view) {
-        TextView titleTextView = (TextView) view.findViewById(R.id.titleTextView);
-        TextView contentTextView = (TextView) view.findViewById(R.id.contentTextView);
-        titleTextView.setText(item.getTitle());
-        contentTextView.setText(item.getText());
-    }
+    private void bind(final EventsCardItem item, View view, final Context context) {
+        TextView eventsTitleTextView = (TextView) view.findViewById(R.id.textview_title_events_fragment_item);
+        TextView eventsContentTextView = (TextView) view.findViewById(R.id.textview_text_events_fragment_item);
+        eventsContentTextView.setVisibility(View.GONE);
+        int day = item.getTitle();
 
+        switch(day) {
+            case R.string.day_0:
+                day = 0;
+                break;
+            case R.string.day_1:
+                day = 1;
+                break;
+            case R.string.day_2:
+                day = 2;
+                break;
+            case R.string.day_3:
+                day = 1;
+                break;
+        }
+
+        Button eventsButton = (Button) view.findViewById(R.id.button_events_fragment_item);
+        final int finalDay = day;
+        eventsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, EventsView.class);
+                intent.putExtra("day", finalDay);
+                context.startActivity(intent);
+            }
+        });
+        eventsTitleTextView.setText(item.getTitle());
+        //eventsContentTextView.setText(item.getText());
+    }
 }
