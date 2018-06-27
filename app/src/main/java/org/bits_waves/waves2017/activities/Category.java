@@ -33,7 +33,6 @@ public class Category extends AppCompatActivity {
         setContentView(R.layout.activity_category);
 
         TextView tv_heading = findViewById(R.id.category_title);
-        ImageButton catogory_button = (ImageButton) findViewById(R.id.icon_category);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycle_catogory);
         recyclerView.setHasFixedSize(true);

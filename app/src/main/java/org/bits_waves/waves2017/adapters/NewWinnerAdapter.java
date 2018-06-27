@@ -20,11 +20,10 @@ import java.util.List;
 public class NewWinnerAdapter extends RecyclerView.Adapter<NewWinnerAdapter.ViewHolder> {
 
     private List<WinnerItem> listItems;
-    private Context context;
 
     public NewWinnerAdapter(List<WinnerItem> listItem, Context context) {
         this.listItems = listItem;
-        this.context = context;
+        Context context1 = context;
     }
 
     @Override
@@ -49,9 +48,9 @@ public class NewWinnerAdapter extends RecyclerView.Adapter<NewWinnerAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView winner_name,win2,win3;
-        public TextView event_name;
-        LinearLayout linearLayout;
+        private TextView winner_name,win2,win3;
+        private TextView event_name;
+        private LinearLayout linearLayout;
 
         ViewHolder(View itemView) {
             super(itemView);
