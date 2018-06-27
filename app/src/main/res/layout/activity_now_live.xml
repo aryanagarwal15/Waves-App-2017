@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF3E0"
-    tools:context="org.bits_waves.waves2017.Activities.NowLive">
+    tools:context="org.bits_waves.waves2017.activities.NowLive">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"

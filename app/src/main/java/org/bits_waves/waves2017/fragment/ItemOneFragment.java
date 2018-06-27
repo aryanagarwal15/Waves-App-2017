@@ -6,14 +6,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.bits_waves.waves2017.ListItems.EventItem;
 import org.bits_waves.waves2017.R;
 import org.bits_waves.waves2017.tabs.Day0;
 import org.bits_waves.waves2017.tabs.Day1;
@@ -24,16 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemOneFragment extends Fragment {
-    private View myFragmentView;
-    private String imgURL;
-    private int bitIMG;
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private List<EventItem> listItems = new ArrayList<>();
 
     public static ItemOneFragment newInstance() {
-        ItemOneFragment fragment = new ItemOneFragment();
-        return fragment;
+        return new ItemOneFragment();
     }
 
     @Override
@@ -46,7 +37,7 @@ public class ItemOneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.events_tabs,container, false);
+        View view = inflater.inflate(R.layout.events_tabs, container, false);
         // Setting ViewPager for each Tabs
         ViewPager viewPager = view.findViewById(R.id.viewpager);
         setupViewPager(viewPager);
@@ -61,6 +52,7 @@ public class ItemOneFragment extends Fragment {
 
         return view;
     }
+
     private void setupViewPager(ViewPager viewPager) {
 
 
@@ -73,8 +65,8 @@ public class ItemOneFragment extends Fragment {
         viewPager.setAdapter(adapter);
 
 
-
     }
+
     static class Adapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();

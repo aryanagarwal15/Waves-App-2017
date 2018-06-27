@@ -15,12 +15,72 @@
       },
       "oauth_client": [
         {
+          "client_id": "790898194518-8bl4ta4fidbocfd6hgiq92agslmq822g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.bits_waves.waves2017",
+            "certificate_hash": "02c809bf258827713836a310f6ab762a70040728"
+          }
+        },
+        {
           "client_id": "790898194518-lcg9t2qud3huvjabp40mavqst0rfrpe1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "org.bits_waves.waves2017",
             "certificate_hash": "088f5764907bdea716ec1fa3da6b0eb9311beee4"
           }
+        },
+        {
+          "client_id": "790898194518-1rge08dkn06h8kolhbjvuo6sfg31lguo.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "790898194518-1rge08dkn06h8kolhbjvuo6sfg31lguo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzeuIAIP9qhYsjrAZ1FERn-0P4Oxuj4x4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790898194518-1rge08dkn06h8kolhbjvuo6sfg31lguo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790898194518:android:0ab77d48493ebb41",
+        "android_client_info": {
+          "package_name": "org.bits_waves.wavesappdev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790898194518-ks37i9b611j9dbq2ji31u94rebskjtur.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.bits_waves.wavesappdev",
+            "certificate_hash": "088f5764907bdea716ec1fa3da6b0eb9311beee4"
+          }
+        },
+        {
+          "client_id": "790898194518-1rge08dkn06h8kolhbjvuo6sfg31lguo.apps.googleusercontent.com",
+          "client_type": 3
         },
         {
           "client_id": "790898194518-1rge08dkn06h8kolhbjvuo6sfg31lguo.apps.googleusercontent.com",

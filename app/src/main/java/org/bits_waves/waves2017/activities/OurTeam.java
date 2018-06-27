@@ -1,4 +1,4 @@
-package org.bits_waves.waves2017.Activities;
+package org.bits_waves.waves2017.activities;
 
 
 /**
@@ -15,16 +15,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import org.bits_waves.waves2017.R;
 import org.bits_waves.waves2017.fragment.OurTeam_FragementApp;
-import org.bits_waves.waves2017.fragment.OurTeam_FragementSponsers;
 import org.bits_waves.waves2017.fragment.OurTeam_FragementWaves;
 
 import java.util.ArrayList;
@@ -53,7 +50,7 @@ public class OurTeam extends AppCompatActivity {
         View v=getWindow().getDecorView();
         v.setBackgroundColor(Color.GRAY);
 
-        back=(ImageButton) findViewById(R.id.back_button);
+        back= findViewById(R.id.back_button);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,13 +64,13 @@ public class OurTeam extends AppCompatActivity {
         mSectionsPagerAdapter=new SectionsPagerAdapter(getSupportFragmentManager());
 
 
-        mViewPager=(ViewPager)findViewById(R.id.container2);
+        mViewPager=findViewById(R.id.container2);
         setupViewPager(mViewPager);
 
         //      toolbarImage = (ImageView) findViewById(R.id.toolbar_image2);
 
 
-        TabLayout tb = (TabLayout) findViewById(R.id.tabLayout);
+        TabLayout tb =  findViewById(R.id.tabLayout);
         tb.setupWithViewPager(mViewPager);
 
 

@@ -1,4 +1,4 @@
-package org.bits_waves.waves2017.Activities;
+package org.bits_waves.waves2017.activities;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;

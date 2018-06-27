@@ -9,24 +9,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.bits_waves.waves2017.Adapters.EventAdapter;
-import org.bits_waves.waves2017.ListItems.EventItem;
+import org.bits_waves.waves2017.adapters.EventAdapter;
+import org.bits_waves.waves2017.listitems.EventItem;
 import org.bits_waves.waves2017.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Day1 extends Fragment {
-    private View myFragmentView;
-    private String imgURL;
-    private int bitIMG;
 
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private List<EventItem> listItems = new ArrayList<>();
     public static Day1 newInstance() {
-        Day1 fragment = new Day1();
-        return fragment;
+        return new Day1();
     }
 
     @Override
@@ -38,22 +31,18 @@ public class Day1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        myFragmentView=inflater.inflate(R.layout.activity_day1, container, false);
+        View myFragmentView = inflater.inflate(R.layout.activity_day1, container, false);
 
-        recyclerView = (RecyclerView) myFragmentView.findViewById(R.id.recycle2);
+        RecyclerView recyclerView = myFragmentView.findViewById(R.id.recycle2);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
-        listItems = new ArrayList<>();
+        List<EventItem> listItems = new ArrayList<>();
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        adapter = new EventAdapter(listItems,getActivity().getApplicationContext());
+        RecyclerView.Adapter adapter = new EventAdapter(listItems, getActivity().getApplicationContext());
 
         recyclerView.setAdapter(adapter);
-
-
-
-
 
         EventItem listItem = new EventItem("Rangmanch","","http://bits-waves.org/static/main/images1/events/rangmanch.jpg","09:00","Auditorium","Drama");
         listItems.add(listItem);

@@ -9,21 +9,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import org.bits_waves.waves2017.Activities.Category_home_page;
-import org.bits_waves.waves2017.Activities.Mini_fest;
-import org.bits_waves.waves2017.Activities.NowLive;
-import org.bits_waves.waves2017.Activities.OurTeam;
-import org.bits_waves.waves2017.Activities.RegActivity;
+import org.bits_waves.waves2017.activities.Category_home_page;
+import org.bits_waves.waves2017.activities.Mini_fest;
+import org.bits_waves.waves2017.activities.NowLive;
+import org.bits_waves.waves2017.activities.OurTeam;
+import org.bits_waves.waves2017.activities.RegActivity;
 import org.bits_waves.waves2017.R;
-import org.bits_waves.waves2017.Activities.WinnersActivity;
+import org.bits_waves.waves2017.activities.WinnersActivity;
 
 public class ItemThreeFragment extends Fragment {
-    public ImageButton ourTeam, regBut;
-    private View myFragmentView;
-    private Button live,winner_but,category,hello;
+
     public static ItemThreeFragment newInstance() {
-        ItemThreeFragment fragment = new ItemThreeFragment();
-        return fragment;
+        return new ItemThreeFragment();
     }
 
     @Override
@@ -34,13 +31,13 @@ public class ItemThreeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        myFragmentView=inflater.inflate(R.layout.fragment_item_three, container, false);
-        ourTeam = myFragmentView.findViewById(R.id.ourTeam);
-        regBut = myFragmentView.findViewById(R.id.regBut);
-        live = myFragmentView.findViewById(R.id.live);
-        winner_but=myFragmentView.findViewById(R.id.winners);
-        category=myFragmentView.findViewById(R.id.category_mainpage);
-        hello=myFragmentView.findViewById(R.id.minifest_mainpage);
+        View myFragmentView = inflater.inflate(R.layout.fragment_item_three, container, false);
+        ImageButton ourTeam = myFragmentView.findViewById(R.id.ourTeam);
+        ImageButton regBut = myFragmentView.findViewById(R.id.regBut);
+        Button live = myFragmentView.findViewById(R.id.live);
+        Button winner_but = myFragmentView.findViewById(R.id.winners);
+        Button category = myFragmentView.findViewById(R.id.category_mainpage);
+        Button hello = myFragmentView.findViewById(R.id.minifest_mainpage);
 
         ourTeam.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.ActionCodeSettings;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,9 +21,7 @@ import org.bits_waves.waves2017.R;
 
 public class BITSLogin extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    EditText editEmail, editPassword;
-    Button signup;
-    TextView alreadyLoggedIn;
+    private EditText editEmail, editPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +29,9 @@ public class BITSLogin extends AppCompatActivity {
         setContentView(R.layout.activity_bitslogin);
         editEmail = findViewById(R.id.bits_email);
         editPassword = findViewById(R.id.bits_pass);
-        signup = findViewById(R.id.btn_login);
+        Button signup = findViewById(R.id.btn_login);
         mAuth = FirebaseAuth.getInstance();
-        alreadyLoggedIn = findViewById(R.id.move_to_login);
+        TextView alreadyLoggedIn = findViewById(R.id.move_to_login);
         alreadyLoggedIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

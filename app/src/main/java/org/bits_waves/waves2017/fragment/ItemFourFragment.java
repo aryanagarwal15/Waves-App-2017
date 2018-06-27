@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,8 +22,7 @@ import java.util.List;
 public class ItemFourFragment extends Fragment {
 
     public static ItemFourFragment newInstance() {
-        ItemFourFragment fragment = new ItemFourFragment();
-        return fragment;
+        return new ItemFourFragment();
     }
 
     @Override
@@ -41,7 +39,6 @@ public class ItemFourFragment extends Fragment {
         // Setting ViewPager for each Tabs
         ViewPager viewPager = view.findViewById(R.id.viewpager);
         setupViewPager(viewPager);
-        Toolbar toolbar = view.findViewById(R.id.toolbar);
         TextView title = view.findViewById(R.id.title_text);
         title.setText("Nights");
         title.setTextColor(getResources().getColor(R.color.white));
