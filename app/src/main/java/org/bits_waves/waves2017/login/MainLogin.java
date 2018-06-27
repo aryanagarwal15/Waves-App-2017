@@ -10,13 +10,12 @@ import android.widget.RelativeLayout;
 import org.bits_waves.waves2017.R;
 
 public class MainLogin extends AppCompatActivity {
-    RelativeLayout bitsian, non_bitsian;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
-        bitsian = findViewById(R.id.bits_login);
-        non_bitsian = findViewById(R.id.non_bits_login);
+        RelativeLayout bitsian = findViewById(R.id.bits_login);
+        RelativeLayout non_bitsian = findViewById(R.id.non_bits_login);
 
         bitsian.setOnClickListener(new View.OnClickListener() {
             @Override

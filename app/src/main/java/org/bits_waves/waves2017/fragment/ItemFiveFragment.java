@@ -76,9 +76,9 @@ public class ItemFiveFragment extends Fragment {
 
         });
         if (CheckNetwork.isInternetAvailable(getActivity().getApplicationContext())) //returns true if internet available
-        {
-        } else {
-            Toast.makeText(getActivity().getApplicationContext(), "No Internet Connection", Toast.LENGTH_LONG).show();
+
+         else {
+        Toast.makeText(getActivity().getApplicationContext(), "No Internet Connection", Toast.LENGTH_LONG).show();
         }
 
         return myFragmentView;

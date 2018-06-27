@@ -29,11 +29,6 @@ import java.util.List;
 
 public class OurTeam extends AppCompatActivity {
 
-
-    private ImageButton back;
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-    //    private ImageView toolbarImage;
-    private ViewPager mViewPager;
     private static final String TAG="Our Team";
 
     @Override
@@ -50,7 +45,7 @@ public class OurTeam extends AppCompatActivity {
         View v=getWindow().getDecorView();
         v.setBackgroundColor(Color.GRAY);
 
-        back= findViewById(R.id.back_button);
+        ImageButton back = findViewById(R.id.back_button);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,10 +56,10 @@ public class OurTeam extends AppCompatActivity {
         });
 
         Log.d(TAG,"hello i m done");
-        mSectionsPagerAdapter=new SectionsPagerAdapter(getSupportFragmentManager());
+        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
 
-        mViewPager=findViewById(R.id.container2);
+        ViewPager mViewPager = findViewById(R.id.container2);
         setupViewPager(mViewPager);
 
         //      toolbarImage = (ImageView) findViewById(R.id.toolbar_image2);
