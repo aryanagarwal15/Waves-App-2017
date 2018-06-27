@@ -11,6 +11,7 @@ import org.bits_waves.waves2017.R;
 
 public class AboutEvent extends Fragment {
     private String event_name_string;
+    private int event_name_int;
     private TextView about_event;
 
 
@@ -28,7 +29,8 @@ public class AboutEvent extends Fragment {
             if (extras == null) {
                 event_name_string = null;
             } else {
-                event_name_string = extras.getString("event_name");
+                event_name_int = extras.getInt("event_name");
+                event_name_string = getString(event_name_int);
             }
         } else {
             event_name_string = (String) savedInstanceState.getSerializable("event_name");

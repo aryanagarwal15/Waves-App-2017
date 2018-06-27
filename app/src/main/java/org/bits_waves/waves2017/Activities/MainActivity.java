@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import org.bits_waves.waves2017.R;
+import org.bits_waves.waves2017.fragment.EventsFragment;
 import org.bits_waves.waves2017.fragment.ItemFiveFragment;
 import org.bits_waves.waves2017.fragment.ItemFourFragment;
 import org.bits_waves.waves2017.fragment.ItemOneFragment;
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                         Fragment selectedFragment = null;
                         switch (item.getItemId()) {
                             case R.id.action_item1:
-                                selectedFragment = ItemOneFragment.newInstance();
+                                selectedFragment = EventsFragment.newInstance();
                                 break;
                             case R.id.action_item2:
                                 selectedFragment = ItemTwoFragment.newInstance();

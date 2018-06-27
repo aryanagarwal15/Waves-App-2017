@@ -5,6 +5,10 @@
     <string name="item_3">Home</string>
     <string name="item_4">Nights</string>
     <string name="item_5">Winners</string>
+    <string name="day_0">Day 0</string>
+    <string name="day_1">Day 1</string>
+    <string name="day_2">Day 2</string>
+    <string name="day_3">Day 3</string>
     <string name="title_activity_nights">Nights</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
@@ -13,4 +17,21 @@
     <string name="waves_password">Password</string>
     <string name="facebook_app_id">1876741525958291</string>
     <string name="fb_login_protocol_scheme">fb1876741525958291</string>
+
+    //Temp:
+    <string name="title_1">Cool card</string>
+    <string name="title_2">Ok card</string>
+    <string name="title_3">Bad card</string>
+    <string name="title_4">Ugly card</string>
+    <string name="text_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam eget ligula eu lectus lobortis condimentum.</string>
+    <string name="event_1">Spin Off</string>
+    <string name="event_2">Natyanjali</string>
+    <string name="event_3">Sizzle</string>
+    <string name="event_4">Dancing Duo</string>
+    <string name="event_5">Rangmanch</string>
+    <string name="event_6">Nukkad Natak</string>
+    <string name="event_7">Skime</string>
+    <string name="event_8">Indian Rock</string>
+
+
 </resources>
