@@ -10,8 +10,6 @@ import android.widget.TextView;
 import org.bits_waves.waves2017.R;
 
 public class Schedule extends Fragment {
-    private String event_name_string;
-    private TextView schedule;
 
 
     @Override
@@ -23,6 +21,7 @@ public class Schedule extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_schedule, container, false);
+        String event_name_string;
         if (savedInstanceState == null) {
             Bundle extras = getActivity().getIntent().getExtras();
             if (extras == null) {
@@ -33,7 +32,7 @@ public class Schedule extends Fragment {
         } else {
             event_name_string = (String) savedInstanceState.getSerializable("event_name");
         }
-        schedule = (TextView) view.findViewById(R.id.schedule);
+        TextView schedule = view.findViewById(R.id.schedule);
         if (event_name_string.equals("Heading 0 2")){
             schedule.setText("This is a just a silly test");
         }

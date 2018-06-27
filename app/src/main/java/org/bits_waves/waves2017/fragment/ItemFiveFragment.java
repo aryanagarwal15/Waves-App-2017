@@ -1,5 +1,6 @@
 package org.bits_waves.waves2017.fragment;
 
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,7 +9,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -17,9 +17,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.bits_waves.waves2017.Adapters.NewWinnerAdapter;
+import org.bits_waves.waves2017.adapters.NewWinnerAdapter;
 import org.bits_waves.waves2017.CheckNetwork;
-import org.bits_waves.waves2017.ListItems.WinnerItem;
+import org.bits_waves.waves2017.listitems.WinnerItem;
 import org.bits_waves.waves2017.R;
 import org.bits_waves.waves2017.Utils;
 import org.bits_waves.waves2017.WinnerPuller;
@@ -28,17 +28,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemFiveFragment extends Fragment {
-    private View myFragmentView;
-    public ImageButton backBut1;
-    private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private List<WinnerItem> listItems;
-    private FirebaseDatabase fData;
-    private DatabaseReference mDatabase;
 
     public static ItemFiveFragment newInstance() {
-        ItemFiveFragment fragment = new ItemFiveFragment();
-        return fragment;
+        return new ItemFiveFragment();
     }
 
     @Override
@@ -50,13 +44,13 @@ public class ItemFiveFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        myFragmentView = inflater.inflate(R.layout.fragment_item_five, container, false);
-        recyclerView = (RecyclerView) myFragmentView.findViewById(R.id.recycle5);
+        View myFragmentView = inflater.inflate(R.layout.fragment_item_five, container, false);
+        RecyclerView recyclerView = myFragmentView.findViewById(R.id.recycle5);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
         listItems = new ArrayList<>();
-        fData = Utils.getDatabase();
-        mDatabase = fData.getReference().child("Winner");
+        FirebaseDatabase fData = Utils.getDatabase();
+        DatabaseReference mDatabase = fData.getReference().child("Winner");
         adapter = new NewWinnerAdapter(listItems, getActivity().getApplicationContext());
         mDatabase.keepSynced(true);
         recyclerView.setAdapter(adapter);
@@ -76,7 +70,8 @@ public class ItemFiveFragment extends Fragment {
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
 
         });

@@ -4,13 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Window;
 import android.view.WindowManager;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import org.bits_waves.waves2017.Activities.MainActivity;
+import org.bits_waves.waves2017.activities.MainActivity;
 import org.bits_waves.waves2017.login.MainLogin;
 
 public class SplashScreen extends Activity {

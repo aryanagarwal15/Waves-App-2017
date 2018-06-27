@@ -1,6 +1,5 @@
-package org.bits_waves.waves2017.Adapters;
+package org.bits_waves.waves2017.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -14,10 +13,9 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import org.bits_waves.waves2017.Activities.Category;
-import org.bits_waves.waves2017.Activities.MainActivity;
-import org.bits_waves.waves2017.ListItems.EventItem;
-import org.bits_waves.waves2017.Activities.Events;
+import org.bits_waves.waves2017.activities.Category;
+import org.bits_waves.waves2017.listitems.EventItem;
+import org.bits_waves.waves2017.activities.Events;
 import org.bits_waves.waves2017.R;
 
 import java.util.List;
@@ -29,7 +27,6 @@ import java.util.List;
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
     private List<EventItem> listItems;
     private Context context;
-    private LinearLayout rootView;
 
 
 
@@ -104,14 +101,14 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            head = (TextView)itemView.findViewById(R.id.heading);
-            desc = (TextView)itemView.findViewById(R.id.desc);
-            imgViewIcon = (ImageView) itemView.findViewById(R.id.imageView2);
-            linearLayout = (LinearLayout) itemView.findViewById(R.id.linear_lay);
-            rel1 = (RelativeLayout) itemView.findViewById(R.id.main_rel_content);
-            event_time = (TextView)itemView.findViewById(R.id.time_1);
-            event_venue = (TextView)itemView.findViewById(R.id.location);
-            event_category = (TextView) itemView.findViewById(R.id.category);
+            head = itemView.findViewById(R.id.heading);
+            desc = itemView.findViewById(R.id.desc);
+            imgViewIcon =  itemView.findViewById(R.id.imageView2);
+            linearLayout =  itemView.findViewById(R.id.linear_lay);
+            rel1 =  itemView.findViewById(R.id.main_rel_content);
+            event_time = itemView.findViewById(R.id.time_1);
+            event_venue = itemView.findViewById(R.id.location);
+            event_category =  itemView.findViewById(R.id.category);
         }
     }
 }

@@ -1,4 +1,4 @@
-package org.bits_waves.waves2017.Activities;
+package org.bits_waves.waves2017.activities;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -20,28 +20,22 @@ import com.squareup.picasso.Picasso;
 import org.bits_waves.waves2017.tabs.AboutEvent;
 import org.bits_waves.waves2017.R;
 import org.bits_waves.waves2017.tabs.RuleBook;
-import org.bits_waves.waves2017.tabs.Schedule;
 
 public class Events extends AppCompatActivity {
-    private TabLayout mFragmentsTabLayout;
-    private ViewPager mFragmentsViewPager;
-    private ImageView toolbarImage;
-    private TextView event_name;
-    private String event_name_string;
-    private String event_img_string;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
-        mFragmentsTabLayout = (TabLayout) findViewById(R.id.app_bar_home_tabs);
-        mFragmentsViewPager = (ViewPager) findViewById(R.id.app_bar_home_viewpager);
-        toolbarImage = (ImageView) findViewById(R.id.toolbar_image);
-        Toolbar mToolbar = (Toolbar) findViewById(R.id.app_bar_home_toolbar);
-        event_name = (TextView) findViewById(R.id.title_event);
+        TabLayout mFragmentsTabLayout = findViewById(R.id.app_bar_home_tabs);
+        ViewPager mFragmentsViewPager = findViewById(R.id.app_bar_home_viewpager);
+        ImageView toolbarImage = findViewById(R.id.toolbar_image);
+        Toolbar mToolbar = findViewById(R.id.app_bar_home_toolbar);
+        TextView event_name = findViewById(R.id.title_event);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         if (mToolbar != null) {
             mToolbar.setNavigationOnClickListener(
                     new View.OnClickListener() {
@@ -52,9 +46,7 @@ public class Events extends AppCompatActivity {
                     });
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             int colorPrimary = ContextCompat.getColor(this, R.color.colorPrimary);
@@ -63,17 +55,19 @@ public class Events extends AppCompatActivity {
             getWindow().setNavigationBarColor(colorPrimary);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         }
+        String event_name_string;
+        String event_img_string;
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras == null) {
-                event_name_string= null;
+                event_name_string = null;
                 event_img_string = null;
             } else {
-                event_name_string= extras.getString("event_name");
-                event_img_string=extras.getString("event_image");
+                event_name_string = extras.getString("event_name");
+                event_img_string =extras.getString("event_image");
             }
         } else {
-            event_img_string= (String) savedInstanceState.getSerializable("event_image");
+            event_img_string = (String) savedInstanceState.getSerializable("event_image");
             event_name_string = (String) savedInstanceState.getSerializable("event_name");
         }
 //        toolbarImage.setImageResource(R.drawable.ic_hand);
@@ -99,8 +93,6 @@ public class Events extends AppCompatActivity {
                 case 1:
                 default:
                     return new RuleBook();
-
-
             }
         }
 

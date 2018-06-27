@@ -8,8 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.bits_waves.waves2017.Adapters.AppAdapter;
-import org.bits_waves.waves2017.ListItems.AppItem;
+import org.bits_waves.waves2017.adapters.AppAdapter;
+import org.bits_waves.waves2017.listitems.AppItem;
 import org.bits_waves.waves2017.R;
 
 import java.util.ArrayList;
@@ -24,18 +24,15 @@ public class OurTeam_FragementWaves extends android.support.v4.app.Fragment {
 
     private static final String TAG = "OurTeam_FragementWaves";
     public View inf;
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private List<AppItem> appItems;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         inf = inflater.inflate(R.layout.our_team_fragement_waves, container, false);
-        recyclerView = (RecyclerView) inf.findViewById(R.id.our_team_fragement_waves_recycler_view);
+        RecyclerView recyclerView = inf.findViewById(R.id.our_team_fragement_waves_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
-        appItems = new ArrayList<>();
+        List<AppItem> appItems = new ArrayList<>();
         AppItem appItem1 = new AppItem("Rahul Bansal", "Convener", "9953241941", "bansal@bits-waves.org", "https://www.facebook.com/profile.php?id=100000147562780", "https://scontent-bom1-1.xx.fbcdn.net/v/t1.0-9/10968515_1012404305441145_6109278889630334073_n.jpg?oh=668b410c6adf3467b489a4a3a2c5aa9d&oe=5A6A5397", "Yash Agarwal", "Research Head", "9967635466", "yash@bits-waves.org", "https://www.facebook.com/profile.php?id=100000577096347&ref=br_rs", "https://scontent-bom1-1.xx.fbcdn.net/v/t1.0-9/13934856_1404990996196790_1252702611336495014_n.jpg?oh=f06ed98f68e9a42ecfcb28c7501d2ffd&oe=5A816473");
         AppItem appItem2 = new AppItem("Aravind Venugopal", "Operations Head", "9446024217", "aravindv@bits-waves.org", "https://www.facebook.com/profile.php?id=100001648202618", "https://scontent-bom1-1.xx.fbcdn.net/v/t1.0-9/10448758_755684154496518_7424487197453654128_n.jpg?oh=edeeb19b1e9c8ff41a653dd09db4b0f6&oe=5A72245A", "Srivats Mohan", "Events Head", "8976695524", "srivats@bits-waves.org", "https://www.facebook.com/srivats.mohan.37", "https://scontent-bom1-1.xx.fbcdn.net/v/t1.0-9/17523711_1145107858969047_2552814506952691943_n.jpg?oh=a71a7fab6beb080ed8ca4ed0cc6b73b9&oe=5A6A3860");
         AppItem appItem3 = new AppItem("Het Satra", "Sponsorship Head", "9870382100", "het@bits-waves.org", "https://www.facebook.com/het.satra", "https://firebasestorage.googleapis.com/v0/b/waves-2017-97a39.appspot.com/o/our_team_images%2Fheth.jpeg?alt=media&token=e0425c16-f375-453e-97c7-7766c1d0eb22", "Swapnil P. Kumar", "Creative Head", "9986222942", "swapnil@bits-waves.org", "https://www.facebook.com/swapnilpkumar", "https://firebasestorage.googleapis.com/v0/b/waves-2017-97a39.appspot.com/o/our_team_images%2Fswapnil.jpeg?alt=media&token=69c4614b-e4cb-43b9-b82c-9945d2322ee8");
@@ -51,7 +48,7 @@ public class OurTeam_FragementWaves extends android.support.v4.app.Fragment {
         appItems.add(appItem5);
         appItems.add(appItem6);
         appItems.add(appItem7);
-        adapter = new AppAdapter(appItems, getActivity().getApplicationContext());
+        RecyclerView.Adapter adapter = new AppAdapter(appItems, getActivity().getApplicationContext());
         recyclerView.setAdapter(adapter);
         return inf;
     }

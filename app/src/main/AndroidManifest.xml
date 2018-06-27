@@ -13,10 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.MainActivity" />
-        <activity android:name=".Activities.OurTeam" />
-        <activity android:name=".Activities.RegActivity" />
-        <activity android:name=".Activities.Events" />
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.OurTeam" />
+        <activity android:name=".activities.RegActivity" />
+        <activity android:name=".activities.Events" />
 
         <service android:name=".FirebaseMessagingService">
             <intent-filter>
@@ -35,11 +35,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.NowLive" />
-        <activity android:name=".Activities.WinnersActivity" />
-        <activity android:name=".Activities.Category_home_page" />
-        <activity android:name=".Activities.Mini_fest" />
-        <activity android:name=".Activities.Category" />
+        <activity android:name=".activities.NowLive" />
+        <activity android:name=".activities.WinnersActivity" />
+        <activity android:name=".activities.Category_home_page" />
+        <activity android:name=".activities.Mini_fest" />
+        <activity android:name=".activities.Category" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.FacebookActivity" />
 

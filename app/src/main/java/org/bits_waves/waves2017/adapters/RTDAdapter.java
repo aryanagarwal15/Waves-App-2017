@@ -1,7 +1,6 @@
-package org.bits_waves.waves2017.Adapters;
+package org.bits_waves.waves2017.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,9 +8,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.bits_waves.waves2017.Activities.Events;
 import org.bits_waves.waves2017.R;
-import org.bits_waves.waves2017.ListItems.RTDItem;
+import org.bits_waves.waves2017.listitems.RTDItem;
 
 import java.util.List;
 
@@ -21,13 +19,11 @@ import java.util.List;
 
 public class RTDAdapter extends RecyclerView.Adapter<RTDAdapter.ViewHolder> {
     private List<RTDItem> listItems;
-    private Context context;
-    private LinearLayout rootView;
 
 
     public RTDAdapter(List<RTDItem> moviesList, Context context) {
         this.listItems = moviesList;
-        this.context = context;
+        Context context1 = context;
     }
 
     @Override
@@ -58,10 +54,10 @@ public class RTDAdapter extends RecyclerView.Adapter<RTDAdapter.ViewHolder> {
         public ViewHolder(View itemView) {
             super(itemView);
 
-            head = (TextView)itemView.findViewById(R.id.heading);
-            desc = (TextView)itemView.findViewById(R.id.desc);
+            head = itemView.findViewById(R.id.heading);
+            desc = itemView.findViewById(R.id.desc);
 
-            linearLayout = (LinearLayout) itemView.findViewById(R.id.linear_lay);
+            linearLayout =  itemView.findViewById(R.id.linear_lay);
         }
     }
 }

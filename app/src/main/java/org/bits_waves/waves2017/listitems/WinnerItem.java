@@ -1,4 +1,4 @@
-package org.bits_waves.waves2017.ListItems;
+package org.bits_waves.waves2017.listitems;
 
 /**
  * Created by aryan on 23/9/17.

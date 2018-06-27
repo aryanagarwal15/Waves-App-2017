@@ -1,4 +1,4 @@
-package org.bits_waves.waves2017.Adapters;
+package org.bits_waves.waves2017.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +18,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
-import org.bits_waves.waves2017.ListItems.AppItem;
+import org.bits_waves.waves2017.listitems.AppItem;
 import org.bits_waves.waves2017.R;
 
 import java.util.List;
@@ -30,7 +30,6 @@ import java.util.List;
 public class AppAdapter extends RecyclerView.Adapter<AppAdapter.ViewHolder> {
     private List<AppItem> listItems;
     private Context context;
-    private String str, str2;
 
 
 
@@ -140,18 +139,18 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.ViewHolder> {
         public ViewHolder(View itemView) {
             super(itemView);
 
-            name = (TextView)itemView.findViewById(R.id.name);
-            position = (TextView)itemView.findViewById(R.id.email);
-            link = (ImageButton) itemView.findViewById(R.id.info);
-            link2 = (ImageButton) itemView.findViewById(R.id.info2);
-            mail = (ImageButton) itemView.findViewById(R.id.mail);
-            mail2 = (ImageButton) itemView.findViewById(R.id.mail2);
-            mob = (ImageButton) itemView.findViewById(R.id.call);
-            mob2 = (ImageButton) itemView.findViewById(R.id.call2);
-            imgViewIcon = (ImageView) itemView.findViewById(R.id.imageView3);
-            name2 = (TextView)itemView.findViewById(R.id.name2);
-            position2 = (TextView)itemView.findViewById(R.id.email2);
-            imgViewIcon2 = (ImageView) itemView.findViewById(R.id.imageView32);
+            name = itemView.findViewById(R.id.name);
+            position = itemView.findViewById(R.id.email);
+            link =  itemView.findViewById(R.id.info);
+            link2 =  itemView.findViewById(R.id.info2);
+            mail =  itemView.findViewById(R.id.mail);
+            mail2 = itemView.findViewById(R.id.mail2);
+            mob = itemView.findViewById(R.id.call);
+            mob2 = itemView.findViewById(R.id.call2);
+            imgViewIcon = itemView.findViewById(R.id.imageView3);
+            name2 = itemView.findViewById(R.id.name2);
+            position2 = itemView.findViewById(R.id.email2);
+            imgViewIcon2 = itemView.findViewById(R.id.imageView32);
 
         }
     }

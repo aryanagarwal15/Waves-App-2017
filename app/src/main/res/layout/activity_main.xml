@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.bits_waves.waves2017.Activities.MainActivity">
+    tools:context="org.bits_waves.waves2017.activities.MainActivity">
 
     <FrameLayout
         android:id="@+id/frame_layout"

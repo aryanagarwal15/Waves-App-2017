@@ -1,4 +1,4 @@
-package org.bits_waves.waves2017.Activities;
+package org.bits_waves.waves2017.activities;
 
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -24,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);

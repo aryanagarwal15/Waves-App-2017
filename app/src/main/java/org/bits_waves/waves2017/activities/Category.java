@@ -1,64 +1,30 @@
-package org.bits_waves.waves2017.Activities;
-
-//import android.content.Intent;
-//import android.os.Bundle;
-//import android.support.v7.app.AppCompatActivity;
-//import android.support.v7.widget.DefaultItemAnimator;
-//import android.support.v7.widget.LinearLayoutManager;
-//import android.support.v7.widget.RecyclerView;
-//import android.view.View;
-//import android.widget.ImageButton;
-//import android.widget.TextView;
-//
-//import org.bits_waves.waves2017.ListItems.EventItem;
-//import org.bits_waves.waves2017.R;
-//
-//import java.util.ArrayList;
-//import java.util.List;
+package org.bits_waves.waves2017.activities;
 
 /**
  * Created by Keshav on 17-Oct-17.
  */
 
 import android.content.Intent;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
-import com.squareup.picasso.Picasso;
-
-import org.bits_waves.waves2017.Adapters.Category_adapter;
-import org.bits_waves.waves2017.ListItems.EventItem;
+import org.bits_waves.waves2017.adapters.Category_adapter;
+import org.bits_waves.waves2017.listitems.EventItem;
 import org.bits_waves.waves2017.R;
-import org.bits_waves.waves2017.fragment.ItemOneFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class Category extends AppCompatActivity {
-
-    private String imgURL;
-    private int bitIMG;
-
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private List<EventItem> listItems = new ArrayList<>();
     private String heading;
-    public TextView tv_heading;
-    public ImageButton catogory_button,back;
-    public String St;
 
 
     @Override
@@ -66,17 +32,17 @@ public class Category extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
-        tv_heading= (TextView) findViewById(R.id.category_title);
-        catogory_button= (ImageButton) findViewById(R.id.icon_category);
+        TextView tv_heading = findViewById(R.id.category_title);
+        ImageButton catogory_button = (ImageButton) findViewById(R.id.icon_category);
 
-        recyclerView = (RecyclerView)findViewById(R.id.recycle_catogory);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycle_catogory);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
-        listItems = new ArrayList<>();
+        List<EventItem> listItems = new ArrayList<>();
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        adapter = new Category_adapter(listItems,getApplicationContext());
+        RecyclerView.Adapter adapter = new Category_adapter(listItems, getApplicationContext());
 
         recyclerView.setAdapter(adapter);
 //
@@ -88,7 +54,7 @@ public class Category extends AppCompatActivity {
 
         Bundle b=getIntent().getExtras();
         heading =b.getString("category_heading");
-        if(heading.equals("Dance"))
+        if("Dance".equals(heading))
         {
 //
 //            test.setOnClickListener(new View.OnClickListener() {
@@ -110,7 +76,7 @@ public class Category extends AppCompatActivity {
             //day2
             //day3
         }
-        else if(heading.equals("Drama"))
+        else if("Drama".equals(heading))
         {
             tv_heading.setText("Drama");
             //day1
@@ -124,7 +90,7 @@ public class Category extends AppCompatActivity {
                     "09:00","Auditorium","Drama");
             listItems.add(listItem5);
         }
-        else if(heading.equals("Specials"))
+        else if("Specials".equals(heading))
         {
             tv_heading.setText("Specials");
             //day0
@@ -153,7 +119,7 @@ public class Category extends AppCompatActivity {
             listItems.add(listItem51);
 
         }
-        else if(heading.equals("Music"))
+        else if("Music".equals(heading))
         {
             tv_heading.setText("Music");
             //day0
@@ -184,7 +150,7 @@ public class Category extends AppCompatActivity {
             listItems.add(listItem1677);
 
         }
-        else if(heading.equals("Literary"))
+        else if("Literary".equals(heading))
         {
             tv_heading.setText("Literary");
             //day1
@@ -203,7 +169,7 @@ public class Category extends AppCompatActivity {
             listItems.add(listItem9);
 
         }
-        else if(heading.equals("Quiz"))
+        else if("Quiz".equals(heading))
         {
             tv_heading.setText("Quiz");
             //day1
@@ -219,7 +185,7 @@ public class Category extends AppCompatActivity {
             listItems.add(listItem11);
 
         }
-        else if(heading.equals("Workshop"))
+        else if("Workshop".equals(heading))
         {
             tv_heading.setText("Workshop");
             //day3
@@ -229,7 +195,7 @@ public class Category extends AppCompatActivity {
             listItems.add(listItem127);
 
         }
-        else if(heading.equals("Design"))
+        else if("Design".equals(heading))
         {
             tv_heading.setText("Design");
             //day1
@@ -250,7 +216,7 @@ public class Category extends AppCompatActivity {
             listItems.add(listItem87);
 
         }
-        else if(heading.equals("Carpedictum"))
+        else if("Carpedictum".equals(heading))
         {
             tv_heading.setText("Carpedictum");
             EventItem listItem18 = new EventItem("Inverse","",
@@ -259,7 +225,7 @@ public class Category extends AppCompatActivity {
 
 
         }
-        else if(heading.equals("BeauVista"))
+        else if("BeauVista".equals(heading))
         {
             tv_heading.setText("Beau Vista");
             EventItem listItem7 = new EventItem("Artathon","Round 1","http://bits-waves.org/static/main/images1/events/artathon.jpg","10:00","LT-4","Design");
@@ -273,7 +239,7 @@ public class Category extends AppCompatActivity {
 
 
         }
-        else if(heading.equals("Florence"))
+        else if("Florence".equals(heading))
         {
             tv_heading.setText("Florence");
             //dance
@@ -314,7 +280,7 @@ public class Category extends AppCompatActivity {
 
         }
 
-        back=(ImageButton) findViewById(R.id.back_button_category);
+        ImageButton back = findViewById(R.id.back_button_category);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -19,9 +19,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.bits_waves.waves2017.Adapters.RTDAdapter;
+import org.bits_waves.waves2017.adapters.RTDAdapter;
 import org.bits_waves.waves2017.CheckNetwork;
-import org.bits_waves.waves2017.ListItems.RTDItem;
+import org.bits_waves.waves2017.listitems.RTDItem;
 import org.bits_waves.waves2017.R;
 import org.bits_waves.waves2017.RTDPuller;
 import org.bits_waves.waves2017.Utils;
@@ -30,18 +30,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemTwoFragment extends Fragment {
-    private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private List<RTDItem> listItems = new ArrayList<>();
-    private DatabaseReference mDatabase;
-    private FirebaseDatabase fData;
-    private View myFragmentView;
-    private String imgURL;
-    private int bitIMG;
 
     public static ItemTwoFragment newInstance() {
-        ItemTwoFragment fragment = new ItemTwoFragment();
-        return fragment;
+        return new ItemTwoFragment();
     }
 
     @Override
@@ -56,21 +49,19 @@ public class ItemTwoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        myFragmentView = inflater.inflate(R.layout.fragment_item_two, container, false);
-        fData = Utils.getDatabase();
-        recyclerView = myFragmentView.findViewById(R.id.recycle3);
+        View myFragmentView = inflater.inflate(R.layout.fragment_item_two, container, false);
+        FirebaseDatabase fData = Utils.getDatabase();
+        RecyclerView recyclerView = myFragmentView.findViewById(R.id.recycle3);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
-
-        Toolbar toolbar = myFragmentView.findViewById(R.id.toolbar);
         TextView title = myFragmentView.findViewById(R.id.title_text);
         title.setText("Spot - On");
         title.setTextColor(getResources().getColor(R.color.white));
 
         listItems = new ArrayList<>();
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        mDatabase = fData.getReference().child("rtd");
+        DatabaseReference mDatabase = fData.getReference().child("rtd");
         mDatabase.keepSynced(true);
         adapter = new RTDAdapter(listItems, getActivity().getApplicationContext());
 

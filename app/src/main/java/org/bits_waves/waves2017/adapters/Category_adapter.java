@@ -1,4 +1,4 @@
-package org.bits_waves.waves2017.Adapters;
+package org.bits_waves.waves2017.adapters;
 
 
 /**
@@ -8,8 +8,7 @@ package org.bits_waves.waves2017.Adapters;
 
 import android.content.Context;
 
-import org.bits_waves.waves2017.Adapters.EventAdapter;
-import org.bits_waves.waves2017.ListItems.EventItem;
+import org.bits_waves.waves2017.listitems.EventItem;
 
 import java.util.List;
 

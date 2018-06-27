@@ -1,8 +1,8 @@
-package org.bits_waves.waves2017.Activities;
+package org.bits_waves.waves2017.activities;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -16,23 +16,20 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.bits_waves.waves2017.Adapters.NowLiveAdapter;
-import org.bits_waves.waves2017.Adapters.RTDAdapter;
-import org.bits_waves.waves2017.ListItems.NowLiveItem;
-import org.bits_waves.waves2017.ListItems.RTDItem;
-import org.bits_waves.waves2017.NowLivePuller;
+import org.bits_waves.waves2017.adapters.NewWinnerAdapter;
+import org.bits_waves.waves2017.listitems.WinnerItem;
 import org.bits_waves.waves2017.R;
-import org.bits_waves.waves2017.RTDPuller;
 import org.bits_waves.waves2017.Utils;
+import org.bits_waves.waves2017.WinnerPuller;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NowLive extends AppCompatActivity {
+public class WinnersActivity extends AppCompatActivity {
     public ImageButton backBut1;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-    private List<NowLiveItem> listItems = new ArrayList<>();
+    private List<WinnerItem> listItems = new ArrayList<>();
     private DatabaseReference mDatabase;
     private FirebaseDatabase fData;
 
@@ -40,27 +37,28 @@ public class NowLive extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_now_live);
-        backBut1 = (ImageButton) findViewById(R.id.back_button);
+        setContentView(R.layout.activity_winners);
+        backBut1 =  findViewById(R.id.back_button);
         backBut1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(NowLive.this, MainActivity.class);
+                Intent intent = new Intent(WinnersActivity.this, MainActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.transition.up_to_down, R.transition.down_to_up);
 
             }
         });
         fData = Utils.getDatabase();
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView =  findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
+
         listItems = new ArrayList<>();
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        mDatabase = fData.getReference().child("live");
+        mDatabase = fData.getReference().child("Winner");
         mDatabase.keepSynced(true);
-        adapter = new NowLiveAdapter(listItems, getApplicationContext());
+        adapter = new NewWinnerAdapter(listItems, getApplicationContext());
 
         recyclerView.setAdapter(adapter);
 
@@ -68,13 +66,13 @@ public class NowLive extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    NowLivePuller dataPuller = snapshot.getValue(NowLivePuller.class);
-                    NowLiveItem listItem = new NowLiveItem(
-                            dataPuller.getTitle(), dataPuller.getVenue()
+                    WinnerPuller dataPuller = snapshot.getValue(WinnerPuller.class);
+                    WinnerItem listItem = new WinnerItem(
+                            dataPuller.getEvent_Name(), dataPuller.getWinner_Name(), dataPuller.getWinner_2(), dataPuller.getWinner_3()
                     );
                     listItems.add(listItem);
-                    Log.d("Title", dataPuller.getTitle());
-                    Log.d("Venue", dataPuller.getVenue());
+                    Log.d( "Winner_Name", dataPuller.getWinner_Name());
+                    Log.d( "Event_Name", dataPuller.getEvent_Name());
                     adapter.notifyDataSetChanged();
                 }
             }

@@ -1,4 +1,4 @@
-package org.bits_waves.waves2017.Adapters;
+package org.bits_waves.waves2017.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.bits_waves.waves2017.ListItems.NowLiveItem;
+import org.bits_waves.waves2017.listitems.NowLiveItem;
 import org.bits_waves.waves2017.R;
 
 import java.util.List;
@@ -19,13 +19,10 @@ import java.util.List;
 
 public class NowLiveAdapter extends RecyclerView.Adapter<NowLiveAdapter.ViewHolder> {
     private List<NowLiveItem> listItems;
-    private Context context;
-    private LinearLayout rootView;
 
 
     public NowLiveAdapter(List<NowLiveItem> moviesList, Context context) {
         this.listItems = moviesList;
-        this.context = context;
     }
 
     @Override
@@ -55,8 +52,8 @@ public class NowLiveAdapter extends RecyclerView.Adapter<NowLiveAdapter.ViewHold
 
         public ViewHolder(View itemView) {
             super(itemView);
-            Title = (TextView) itemView.findViewById(R.id.Title);
-            Venue = (TextView) itemView.findViewById(R.id.Venue);
+            Title =  itemView.findViewById(R.id.Title);
+            Venue =  itemView.findViewById(R.id.Venue);
             linearLayout = itemView.findViewById(R.id.linear_lay);
         }
     }

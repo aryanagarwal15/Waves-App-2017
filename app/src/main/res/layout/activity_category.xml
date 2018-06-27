@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="org.bits_waves.waves2017.Activities.Category">
+    tools:context="org.bits_waves.waves2017.activities.Category">
 
     <RelativeLayout
         android:layout_width="match_parent"

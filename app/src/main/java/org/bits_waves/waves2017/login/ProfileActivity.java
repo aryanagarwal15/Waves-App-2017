@@ -3,7 +3,6 @@ package org.bits_waves.waves2017.login;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,7 +12,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
 import com.squareup.picasso.Picasso;
 
-import org.bits_waves.waves2017.Activities.CircleTransform;
+import org.bits_waves.waves2017.activities.CircleTransform;
 import org.bits_waves.waves2017.R;
 
 public class ProfileActivity extends AppCompatActivity {

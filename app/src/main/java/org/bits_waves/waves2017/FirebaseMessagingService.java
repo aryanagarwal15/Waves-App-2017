@@ -15,7 +15,7 @@ import android.util.Log;
 
 import com.google.firebase.messaging.RemoteMessage;
 
-import org.bits_waves.waves2017.Activities.MainActivity;
+import org.bits_waves.waves2017.activities.MainActivity;
 
 /**
  * Created by User on 2/20/2017.

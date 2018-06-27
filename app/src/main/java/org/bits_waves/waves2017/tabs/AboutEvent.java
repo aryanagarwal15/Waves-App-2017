@@ -10,8 +10,6 @@ import android.widget.TextView;
 import org.bits_waves.waves2017.R;
 
 public class AboutEvent extends Fragment {
-    private String event_name_string;
-    private TextView about_event;
 
 
     @Override
@@ -23,6 +21,7 @@ public class AboutEvent extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_about_event, container, false);
+        String event_name_string;
         if (savedInstanceState == null) {
             Bundle extras = getActivity().getIntent().getExtras();
             if (extras == null) {
@@ -33,7 +32,7 @@ public class AboutEvent extends Fragment {
         } else {
             event_name_string = (String) savedInstanceState.getSerializable("event_name");
         }
-        about_event = (TextView) view.findViewById(R.id.about_event);
+        TextView about_event = view.findViewById(R.id.about_event);
         if (event_name_string.equals("Spin Off")){
             about_event.setText("Do you have it in you to win the ultimate band title?\n" +
                     "This is the intercollegiate band event. The bands may use a range of " +

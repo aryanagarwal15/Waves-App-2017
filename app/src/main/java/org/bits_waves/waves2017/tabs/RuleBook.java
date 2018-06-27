@@ -12,8 +12,6 @@ import android.widget.Toast;
 import org.bits_waves.waves2017.R;
 
 public class RuleBook extends Fragment {
-    private String event_name_string;
-    private TextView about_event;
 
 
     @Override
@@ -25,6 +23,7 @@ public class RuleBook extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_rule_book, container, false);
+        String event_name_string;
         if (savedInstanceState == null) {
             Bundle extras = getActivity().getIntent().getExtras();
             if (extras == null) {
@@ -35,7 +34,7 @@ public class RuleBook extends Fragment {
         } else {
             event_name_string = (String) savedInstanceState.getSerializable("event_name");
         }
-        about_event = (TextView) view.findViewById(R.id.rules);
+        TextView about_event = view.findViewById(R.id.rules);
 
         if (event_name_string.equals("Natyanjali")){
             about_event.setText("General Rules:  \n" +

@@ -1,4 +1,4 @@
-package org.bits_waves.waves2017.Adapters;
+package org.bits_waves.waves2017.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.bits_waves.waves2017.ListItems.WinnerItem;
+import org.bits_waves.waves2017.listitems.WinnerItem;
 import org.bits_waves.waves2017.R;
 
 import java.util.List;
@@ -49,17 +49,17 @@ public class NewWinnerAdapter extends RecyclerView.Adapter<NewWinnerAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView winner_name,win2,win3;
+        TextView winner_name,win2,win3;
         public TextView event_name;
-        public LinearLayout linearLayout;
+        LinearLayout linearLayout;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
-            event_name = (TextView)itemView.findViewById(R.id.event_name);
-            winner_name = (TextView)itemView.findViewById(R.id.winner_name);
-            win2=(TextView) itemView.findViewById(R.id.winner_name1);
-            win3 = (TextView) itemView.findViewById(R.id.winner_name2);
-            linearLayout = (LinearLayout) itemView.findViewById(R.id.linear_lay);
+            event_name = itemView.findViewById(R.id.event_name);
+            winner_name = itemView.findViewById(R.id.winner_name);
+            win2= itemView.findViewById(R.id.winner_name1);
+            win3 =  itemView.findViewById(R.id.winner_name2);
+            linearLayout =  itemView.findViewById(R.id.linear_lay);
         }
     }
 }
