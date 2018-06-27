@@ -2,13 +2,10 @@ package org.bits_waves.waves2017.tabs;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.system.StructPollfd;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import org.bits_waves.waves2017.R;
 
 public class RuleBook extends Fragment {

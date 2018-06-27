@@ -27,11 +27,8 @@ import java.util.List;
 
 public class WinnersActivity extends AppCompatActivity {
     public ImageButton backBut1;
-    private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private List<WinnerItem> listItems = new ArrayList<>();
-    private DatabaseReference mDatabase;
-    private FirebaseDatabase fData;
 
 
     @Override
@@ -48,15 +45,15 @@ public class WinnersActivity extends AppCompatActivity {
 
             }
         });
-        fData = Utils.getDatabase();
-        recyclerView =  findViewById(R.id.recycler_view);
+        FirebaseDatabase fData = Utils.getDatabase();
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
 
         listItems = new ArrayList<>();
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        mDatabase = fData.getReference().child("Winner");
+        DatabaseReference mDatabase = fData.getReference().child("Winner");
         mDatabase.keepSynced(true);
         adapter = new NewWinnerAdapter(listItems, getApplicationContext());
 

@@ -20,9 +20,8 @@ import org.bits_waves.waves2017.R;
 
 public class VerifyBITS extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    EditText editEmail, editPassword;
-    Button signIn;
-    String TAG = "DevLog";
+    private EditText editEmail, editPassword;
+    private String TAG = "DevLog";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +29,7 @@ public class VerifyBITS extends AppCompatActivity {
         setContentView(R.layout.activity_verify_bits);
         editEmail = findViewById(R.id.bits_email);
         editPassword = findViewById(R.id.bits_pass);
-        signIn = findViewById(R.id.btn_login);
+        Button signIn = findViewById(R.id.btn_login);
         mAuth = FirebaseAuth.getInstance();
 
         signIn.setOnClickListener(new View.OnClickListener() {

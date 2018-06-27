@@ -16,16 +16,13 @@ import org.bits_waves.waves2017.activities.CircleTransform;
 import org.bits_waves.waves2017.R;
 
 public class ProfileActivity extends AppCompatActivity {
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    TextView username;
-    FirebaseAuth mAuth;
-    ImageView profileImage;
+    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        username = findViewById(R.id.user_profile_name);
-        profileImage = findViewById(R.id.user_profile_photo);
+        TextView username = findViewById(R.id.user_profile_name);
+        ImageView profileImage = findViewById(R.id.user_profile_photo);
         for(UserInfo profile : user.getProviderData()) {
             // check if the provider id matches "facebook.com"
             if(FacebookAuthProvider.PROVIDER_ID.equals(profile.getProviderId())) {
