@@ -44,7 +44,7 @@ public class EventsView extends AppCompatActivity {
                 dpToPixels(2, getApplicationContext()));
 
         ShadowTransformer mCardShadowTransformer = new ShadowTransformer(mViewPager, mCardAdapter);
-        ShadowTransformer mFragmentCardShadowTransformer = new ShadowTransformer(mViewPager, mFragmentCardAdapter);
+        //ShadowTransformer mFragmentCardShadowTransformer = new ShadowTransformer(mViewPager, mFragmentCardAdapter);
 
         mViewPager.setAdapter(mCardAdapter);
         mViewPager.setPageTransformer(false, mCardShadowTransformer);

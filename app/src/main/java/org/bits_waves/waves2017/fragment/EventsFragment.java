@@ -48,7 +48,7 @@ public class EventsFragment extends Fragment{
                 dpToPixels(2, getContext()));
 
         ShadowTransformer mCardShadowTransformer = new ShadowTransformer(mViewPager, mCardAdapter);
-        ShadowTransformer mFragmentCardShadowTransformer = new ShadowTransformer(mViewPager, mFragmentCardAdapter);
+        //ShadowTransformer mFragmentCardShadowTransformer = new ShadowTransformer(mViewPager, mFragmentCardAdapter);
 
         mViewPager.setAdapter(mCardAdapter);
         mViewPager.setPageTransformer(false, mCardShadowTransformer);
