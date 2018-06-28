@@ -50,7 +50,7 @@ public class EventsCardPagerAdapter extends PagerAdapter implements EventsFragme
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view == object;
+        return view.equals(object);
     }
 
     @Override
@@ -94,6 +94,9 @@ public class EventsCardPagerAdapter extends PagerAdapter implements EventsFragme
                 break;
             case R.string.day_3:
                 day = 1;
+                break;
+            default:
+                day = 0;
                 break;
         }
 

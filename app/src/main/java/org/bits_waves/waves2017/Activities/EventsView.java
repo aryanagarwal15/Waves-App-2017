@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import org.bits_waves.waves2017.Adapters.EventsCardFragmentPagerAdapter;
-import org.bits_waves.waves2017.Adapters.EventsCardPagerAdapter;
 import org.bits_waves.waves2017.Adapters.EventsViewCardPagerAdapter;
 import org.bits_waves.waves2017.ListItems.EventsCardItem;
 import org.bits_waves.waves2017.R;
@@ -16,32 +15,23 @@ import org.bits_waves.waves2017.ShadowTransformer;
 
 public class EventsView extends AppCompatActivity {
 
-    private int day;
-    private TextView titleTextView;
-
-    private ViewPager mViewPager;
-
-    private EventsViewCardPagerAdapter mCardAdapter;
-    private ShadowTransformer mCardShadowTransformer;
-    private EventsCardFragmentPagerAdapter mFragmentCardAdapter;
-    private ShadowTransformer mFragmentCardShadowTransformer;
-
-    private boolean mShowingFragments = false;
+    //private boolean mShowingFragments = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events_view);
         Intent intent = getIntent();
-        day = intent.getIntExtra("day", 0);
+        int day = intent.getIntExtra("day", 0);
 
-        mViewPager = (ViewPager) findViewById(R.id.viewpager_events_activity);
+
+        ViewPager mViewPager = (ViewPager) findViewById(R.id.viewpager_events_activity);
 
         //Code to display
-        titleTextView = (TextView) findViewById(R.id.textview_title_events_activity);
+        TextView titleTextView = (TextView) findViewById(R.id.textview_title_events_activity);
         titleTextView.setText("Day " + day);
 
-        mCardAdapter = new EventsViewCardPagerAdapter();
+        EventsViewCardPagerAdapter mCardAdapter = new EventsViewCardPagerAdapter();
         mCardAdapter.addCardItem(new EventsCardItem(R.string.event_1));
         mCardAdapter.addCardItem(new EventsCardItem(R.string.event_2));
         mCardAdapter.addCardItem(new EventsCardItem(R.string.event_3));
@@ -50,11 +40,11 @@ public class EventsView extends AppCompatActivity {
         mCardAdapter.addCardItem(new EventsCardItem(R.string.event_6));
         mCardAdapter.addCardItem(new EventsCardItem(R.string.event_7));
         mCardAdapter.addCardItem(new EventsCardItem(R.string.event_8));
-        mFragmentCardAdapter = new EventsCardFragmentPagerAdapter(getSupportFragmentManager(),
+        EventsCardFragmentPagerAdapter mFragmentCardAdapter = new EventsCardFragmentPagerAdapter(getSupportFragmentManager(),
                 dpToPixels(2, getApplicationContext()));
 
-        mCardShadowTransformer = new ShadowTransformer(mViewPager, mCardAdapter);
-        mFragmentCardShadowTransformer = new ShadowTransformer(mViewPager, mFragmentCardAdapter);
+        ShadowTransformer mCardShadowTransformer = new ShadowTransformer(mViewPager, mCardAdapter);
+        ShadowTransformer mFragmentCardShadowTransformer = new ShadowTransformer(mViewPager, mFragmentCardAdapter);
 
         mViewPager.setAdapter(mCardAdapter);
         mViewPager.setPageTransformer(false, mCardShadowTransformer);

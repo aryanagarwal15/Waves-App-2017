@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import org.bits_waves.waves2017.Activities.Events;
-import org.bits_waves.waves2017.Activities.EventsView;
 import org.bits_waves.waves2017.ListItems.EventsCardItem;
 import org.bits_waves.waves2017.R;
 import org.bits_waves.waves2017.fragment.EventsFragment;
@@ -51,7 +50,7 @@ public class EventsViewCardPagerAdapter extends PagerAdapter implements EventsFr
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view == object;
+        return view.equals(object);
     }
 
     @Override

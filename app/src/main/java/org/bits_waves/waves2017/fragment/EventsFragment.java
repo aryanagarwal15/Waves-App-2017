@@ -11,8 +11,6 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
 
 import org.bits_waves.waves2017.Adapters.EventsCardFragmentPagerAdapter;
 import org.bits_waves.waves2017.Adapters.EventsCardPagerAdapter;
@@ -24,12 +22,7 @@ public class EventsFragment extends Fragment{
 
     private ViewPager mViewPager;
 
-    private EventsCardPagerAdapter mCardAdapter;
-    private ShadowTransformer mCardShadowTransformer;
-    private EventsCardFragmentPagerAdapter mFragmentCardAdapter;
-    private ShadowTransformer mFragmentCardShadowTransformer;
-
-    private boolean mShowingFragments = false;
+    //private boolean mShowingFragments = false;
 
     public static EventsFragment newInstance() {
         EventsFragment fragment = new EventsFragment();
@@ -46,16 +39,16 @@ public class EventsFragment extends Fragment{
     @Override
     public void onStart() {
         super.onStart();
-        mCardAdapter = new EventsCardPagerAdapter();
+        EventsCardPagerAdapter mCardAdapter = new EventsCardPagerAdapter();
         mCardAdapter.addCardItem(new EventsCardItem(R.string.day_0));
         mCardAdapter.addCardItem(new EventsCardItem(R.string.day_1));
         mCardAdapter.addCardItem(new EventsCardItem(R.string.day_2));
         mCardAdapter.addCardItem(new EventsCardItem(R.string.day_3));
-        mFragmentCardAdapter = new EventsCardFragmentPagerAdapter(getActivity().getSupportFragmentManager(),
+        EventsCardFragmentPagerAdapter mFragmentCardAdapter = new EventsCardFragmentPagerAdapter(getActivity().getSupportFragmentManager(),
                 dpToPixels(2, getContext()));
 
-        mCardShadowTransformer = new ShadowTransformer(mViewPager, mCardAdapter);
-        mFragmentCardShadowTransformer = new ShadowTransformer(mViewPager, mFragmentCardAdapter);
+        ShadowTransformer mCardShadowTransformer = new ShadowTransformer(mViewPager, mCardAdapter);
+        ShadowTransformer mFragmentCardShadowTransformer = new ShadowTransformer(mViewPager, mFragmentCardAdapter);
 
         mViewPager.setAdapter(mCardAdapter);
         mViewPager.setPageTransformer(false, mCardShadowTransformer);

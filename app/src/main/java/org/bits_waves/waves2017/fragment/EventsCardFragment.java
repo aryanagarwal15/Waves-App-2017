@@ -15,7 +15,7 @@ import org.bits_waves.waves2017.R;
 public class EventsCardFragment extends Fragment {
 
     private CardView mCardView;
-    private Button mButton;
+    //private Button mButton;
 
     @Nullable
     @Override

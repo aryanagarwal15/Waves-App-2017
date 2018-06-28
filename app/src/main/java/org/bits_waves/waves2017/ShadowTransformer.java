@@ -42,7 +42,9 @@ public class ShadowTransformer implements ViewPager.OnPageChangeListener, ViewPa
 
     @Override
     public void transformPage(View page, float position) {
-
+        for(int i = 0; i<2; i++) {
+            break;
+        }
     }
 
     @Override
@@ -102,11 +104,15 @@ public class ShadowTransformer implements ViewPager.OnPageChangeListener, ViewPa
 
     @Override
     public void onPageSelected(int position) {
-
+        for(int i = 0; i<2; i++) {
+            break;
+        }
     }
 
     @Override
     public void onPageScrollStateChanged(int state) {
-
+        for(int i = 0; i<2; i++) {
+            break;
+        }
     }
 }
